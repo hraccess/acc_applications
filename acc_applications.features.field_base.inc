@@ -243,7 +243,7 @@ function acc_applications_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'application_submission_status',
+          'vocabulary' => 'acc_application_submission_status',
           'parent' => 0,
         ),
       ),
