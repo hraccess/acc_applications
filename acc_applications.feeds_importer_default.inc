@@ -122,15 +122,12 @@ function acc_applications_feeds_importer_default() {
     'name' => 'CSV Access Application Types',
     'description' => '',
     'fetcher' => array(
-      'plugin_key' => 'FeedsFileFetcher',
+      'plugin_key' => 'FeedsHTTPFetcher',
       'config' => array(
-        'allowed_extensions' => 'txt csv tsv xml opml',
-        'direct' => FALSE,
-        'directory' => 'private://feeds',
-        'allowed_schemes' => array(
-          0 => 'public',
-          1 => 'private',
-        ),
+        'auto_detect_feeds' => FALSE,
+        'use_pubsubhubbub' => FALSE,
+        'designated_hub' => '',
+        'request_timeout' => NULL,
       ),
     ),
     'parser' => array(
@@ -153,6 +150,16 @@ function acc_applications_feeds_importer_default() {
           1 => array(
             'source' => 'Parent',
             'target' => 'parent',
+            'unique' => FALSE,
+          ),
+          2 => array(
+            'source' => 'GUID',
+            'target' => 'guid',
+            'unique' => FALSE,
+          ),
+          3 => array(
+            'source' => 'UUID',
+            'target' => 'uuid:uuid',
             'unique' => FALSE,
           ),
         ),

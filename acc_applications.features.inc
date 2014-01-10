@@ -49,22 +49,21 @@ function acc_applications_default_search_api_index() {
       "cron_limit" : "50",
       "fields" : {
         "title" : { "type" : "text" },
+        "status" : { "type" : "boolean" },
+        "author" : { "type" : "integer", "entity_type" : "user" },
         "field_organizations" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_clusters" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_locations" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_submited_to" : { "type" : "integer", "entity_type" : "taxonomy_term" },
-        "field_acc_application_types" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "field_if_denied_app" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "field_how_many_days" : { "type" : "integer" },
-        "field_submission_status" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "field_geographical_location_dest" : { "type" : "integer", "entity_type" : "taxonomy_term" },
+        "field_acc_application_types" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "search_api_language" : { "type" : "string" },
+        "search_api_access_node" : { "type" : "list\\u003Cstring\\u003E" },
         "field_date_app:value" : { "type" : "date" },
         "field_date_app:value2" : { "type" : "date" },
-        "field_date_app:duration" : { "type" : "duration" },
-        "status" : { "type" : "boolean" },
-        "author" : { "type" : "integer", "entity_type" : "user" },
-        "search_api_access_node" : { "type" : "list\\u003Cstring\\u003E" }
+        "field_date_app:duration" : { "type" : "duration" }
       },
       "data_alter_callbacks" : {
         "search_api_alter_bundle_filter" : {
