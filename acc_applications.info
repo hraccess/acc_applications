@@ -29,7 +29,6 @@ features[field_base][] = field_geographical_location_dest
 features[field_base][] = field_how_many_days
 features[field_base][] = field_if_denied_app
 features[field_base][] = field_related_to_access_
-features[field_base][] = field_submission_status
 features[field_base][] = field_submited_to
 features[field_instance][] = node-acc_application-body
 features[field_instance][] = node-acc_application-field_acc_application_types
