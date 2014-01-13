@@ -75,4 +75,4 @@ features[variable][] = node_options_applications
 features[variable][] = node_preview_acc_application
 features[variable][] = node_submitted_acc_application
 features[variable][] = node_submitted_applications
-features[views_view][] = acc_application
+features[views_view][] = acc_application_reports

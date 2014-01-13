@@ -11,7 +11,7 @@ function acc_applications_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'acc_application_reports';
+  $view->name = 'acc_application';
   $view->description = '';
   $view->tag = 'Humanitarian Access';
   $view->base_table = 'node';
@@ -823,7 +823,7 @@ function acc_applications_views_default_views() {
     t('XLS By Status'),
     t('Number of Applications'),
   );
-  $export['acc_application_reports'] = $view;
+  $export['acc_application'] = $view;
 
   return $export;
 }
