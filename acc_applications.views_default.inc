@@ -102,7 +102,7 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['field_acc_application_types']['table'] = 'field_data_field_acc_application_types';
   $handler->display->display_options['fields']['field_acc_application_types']['field'] = 'field_acc_application_types';
   $handler->display->display_options['fields']['field_acc_application_types']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Field: Source */
+  /* Field: Field: Organization */
   $handler->display->display_options['fields']['field_organizations']['id'] = 'field_organizations';
   $handler->display->display_options['fields']['field_organizations']['table'] = 'field_data_field_organizations';
   $handler->display->display_options['fields']['field_organizations']['field'] = 'field_organizations';
@@ -220,7 +220,7 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Field: Source (field_organizations) */
+  /* Relationship: Field: Organization (field_organizations) */
   $handler->display->display_options['relationships']['field_organizations_tid']['id'] = 'field_organizations_tid';
   $handler->display->display_options['relationships']['field_organizations_tid']['table'] = 'field_data_field_organizations';
   $handler->display->display_options['relationships']['field_organizations_tid']['field'] = 'field_organizations_tid';
@@ -454,7 +454,7 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Field: Source (field_organizations) */
+  /* Relationship: Field: Organization (field_organizations) */
   $handler->display->display_options['relationships']['field_organizations_tid']['id'] = 'field_organizations_tid';
   $handler->display->display_options['relationships']['field_organizations_tid']['table'] = 'field_data_field_organizations';
   $handler->display->display_options['relationships']['field_organizations_tid']['field'] = 'field_organizations_tid';
@@ -839,7 +839,12 @@ function acc_applications_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Access Applications';
   $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    229782242 => '229782242',
+    147444660 => '147444660',
+    52310416 => '52310416',
+  );
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -870,6 +875,8 @@ function acc_applications_views_default_views() {
     197637936 => 0,
     52310416 => 0,
     30037204 => 0,
+    147444660 => 0,
+    229782242 => 0,
   );
 
   /* Display: Master */
@@ -896,7 +903,7 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'search_api_index_acc_applications';
   $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['title']['link_to_entity'] = 1;
   /* Field: Indexed Node: Date  */
   $handler->display->display_options['fields']['field_date_app']['id'] = 'field_date_app';
   $handler->display->display_options['fields']['field_date_app']['table'] = 'search_api_index_acc_applications';
@@ -957,7 +964,7 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'search_api_index_acc_applications';
   $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['title']['link_to_entity'] = 1;
   /* Field: Indexed Node: Date  */
   $handler->display->display_options['fields']['field_date_app']['id'] = 'field_date_app';
   $handler->display->display_options['fields']['field_date_app']['table'] = 'search_api_index_acc_applications';
