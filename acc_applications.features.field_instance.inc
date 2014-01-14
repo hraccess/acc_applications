@@ -26,12 +26,9 @@ function acc_applications_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'trim_length' => 600,
-        ),
-        'type' => 'text_summary_or_trimmed',
-        'weight' => 0,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
       ),
     ),
     'entity_type' => 'node',
@@ -51,7 +48,7 @@ function acc_applications_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 11,
+      'weight' => 14,
     ),
   );
 
@@ -73,7 +70,7 @@ function acc_applications_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 12,
       ),
     ),
     'entity_type' => 'node',
@@ -95,6 +92,50 @@ function acc_applications_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-acc_application-field_acc_impacts'
+  $field_instances['node-acc_application-field_acc_impacts'] = array(
+    'bundle' => 'acc_application',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 16,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_acc_impacts',
+    'label' => 'Impacts of applications',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
+      'weight' => 13,
+    ),
+  );
+
   // Exported field_instance: 'node-acc_application-field_acc_nationality'
   $field_instances['node-acc_application-field_acc_nationality'] = array(
     'bundle' => 'acc_application',
@@ -111,9 +152,10 @@ function acc_applications_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'above',
+        'module' => 'countries',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'country_default',
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
@@ -153,7 +195,7 @@ function acc_applications_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 16,
       ),
     ),
     'entity_type' => 'node',
@@ -169,7 +211,7 @@ function acc_applications_field_default_field_instances() {
       'module' => 'hs_taxonomy',
       'settings' => array(),
       'type' => 'taxonomy_hs',
-      'weight' => 13,
+      'weight' => 12,
     ),
   );
 
@@ -191,7 +233,7 @@ function acc_applications_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 15,
       ),
     ),
     'entity_type' => 'node',
@@ -236,7 +278,7 @@ function acc_applications_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 19,
       ),
     ),
     'entity_type' => 'node',
@@ -284,9 +326,10 @@ function acc_applications_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'above',
+        'module' => 'hs_taxonomy',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'hs_taxonomy_term_reference_hierarchical_text',
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
@@ -329,7 +372,7 @@ function acc_applications_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 20,
       ),
     ),
     'entity_type' => 'node',
@@ -371,7 +414,7 @@ function acc_applications_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 18,
       ),
     ),
     'entity_type' => 'node',
@@ -411,7 +454,7 @@ function acc_applications_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 17,
       ),
     ),
     'entity_type' => 'node',
@@ -449,7 +492,7 @@ function acc_applications_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 13,
       ),
     ),
     'entity_type' => 'node',
@@ -489,7 +532,7 @@ function acc_applications_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 14,
       ),
     ),
     'entity_type' => 'node',
@@ -552,6 +595,7 @@ function acc_applications_field_default_field_instances() {
   t('Geographical Location (Origin)');
   t('How many days to get an answer?');
   t('If denied, by whom?');
+  t('Impacts of applications');
   t('Nationality of the traveler');
   t('Related to Access ');
   t('Sectors');

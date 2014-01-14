@@ -71,7 +71,7 @@ function acc_applications_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '12',
+          'weight' => '11',
         ),
       ),
       'display' => array(),
@@ -156,7 +156,7 @@ function acc_applications_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_acc_application';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['node_submitted_acc_application'] = $strongarm;
 
   $strongarm = new stdClass();

@@ -8,8 +8,14 @@
  * Implements hook_ctools_plugin_api().
  */
 function acc_applications_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "context" && $api == "context") {
+    return array("version" => "3");
+  }
   if ($module == "feeds" && $api == "feeds_importer_default") {
     return array("version" => "1");
+  }
+  if ($module == "feeds_tamper" && $api == "feeds_tamper_default") {
+    return array("version" => "2");
   }
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
@@ -57,6 +63,7 @@ function acc_applications_default_search_api_index() {
       "fields" : {
         "title" : { "type" : "text" },
         "status" : { "type" : "boolean" },
+        "created" : { "type" : "date" },
         "author" : { "type" : "integer", "entity_type" : "user" },
         "field_organizations" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_clusters" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
@@ -66,17 +73,19 @@ function acc_applications_default_search_api_index() {
         "field_how_many_days" : { "type" : "integer" },
         "field_geographical_location_dest" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "field_acc_application_types" : { "type" : "integer", "entity_type" : "taxonomy_term" },
+        "field_acc_submission_status" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "search_api_language" : { "type" : "string" },
         "search_api_access_node" : { "type" : "list\\u003Cstring\\u003E" },
         "field_date_app:value" : { "type" : "date" },
         "field_date_app:value2" : { "type" : "date" },
-        "field_date_app:duration" : { "type" : "duration" }
+        "field_date_app:duration" : { "type" : "duration" },
+        "field_acc_nationality:iso2" : { "type" : "text" }
       },
       "data_alter_callbacks" : {
         "search_api_alter_bundle_filter" : {
           "status" : 1,
           "weight" : "-10",
-          "settings" : { "default" : "0", "bundles" : { "applications" : "applications" } }
+          "settings" : { "default" : "0", "bundles" : { "acc_application" : "acc_application" } }
         },
         "search_api_alter_node_access" : { "status" : 1, "weight" : "0", "settings" : [] },
         "search_api_alter_node_status" : { "status" : 0, "weight" : "0", "settings" : [] },

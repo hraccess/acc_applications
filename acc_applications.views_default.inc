@@ -102,7 +102,7 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['field_acc_application_types']['table'] = 'field_data_field_acc_application_types';
   $handler->display->display_options['fields']['field_acc_application_types']['field'] = 'field_acc_application_types';
   $handler->display->display_options['fields']['field_acc_application_types']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Field: Organization */
+  /* Field: Field: Source */
   $handler->display->display_options['fields']['field_organizations']['id'] = 'field_organizations';
   $handler->display->display_options['fields']['field_organizations']['table'] = 'field_data_field_organizations';
   $handler->display->display_options['fields']['field_organizations']['field'] = 'field_organizations';
@@ -220,7 +220,7 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Field: Organization (field_organizations) */
+  /* Relationship: Field: Source (field_organizations) */
   $handler->display->display_options['relationships']['field_organizations_tid']['id'] = 'field_organizations_tid';
   $handler->display->display_options['relationships']['field_organizations_tid']['table'] = 'field_data_field_organizations';
   $handler->display->display_options['relationships']['field_organizations_tid']['field'] = 'field_organizations_tid';
@@ -293,7 +293,7 @@ function acc_applications_views_default_views() {
       'pivot_row_extra' => 0,
     ),
   );
-  $handler->display->display_options['style_options']['pivot_col'] = 'nid';
+  $handler->display->display_options['style_options']['pivot_col'] = 'field_acc_submission_status';
   $handler->display->display_options['style_options']['pivot_row'] = 'field_clusters';
   $handler->display->display_options['style_options']['pivot_mode_multi_values'] = '0';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -416,20 +416,12 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'views_pivot';
   $handler->display->display_options['style_options']['columns'] = array(
     'field_how_many_days' => 'field_how_many_days',
-    'field_submition_status' => 'field_submition_status',
     'field_organization_type' => 'field_organization_type',
+    'field_acc_submission_status' => 'field_acc_submission_status',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
     'field_how_many_days' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-      'pivot_row_extra' => 0,
-    ),
-    'field_submition_status' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -445,8 +437,16 @@ function acc_applications_views_default_views() {
       'empty_column' => 0,
       'pivot_row_extra' => 0,
     ),
+    'field_acc_submission_status' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+      'pivot_row_extra' => 0,
+    ),
   );
-  $handler->display->display_options['style_options']['pivot_col'] = 'field_submition_status';
+  $handler->display->display_options['style_options']['pivot_col'] = 'field_acc_submission_status';
   $handler->display->display_options['style_options']['pivot_row'] = 'field_organization_type';
   $handler->display->display_options['style_options']['pivot_mode_multi_values'] = '0';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -454,7 +454,7 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Field: Organization (field_organizations) */
+  /* Relationship: Field: Source (field_organizations) */
   $handler->display->display_options['relationships']['field_organizations_tid']['id'] = 'field_organizations_tid';
   $handler->display->display_options['relationships']['field_organizations_tid']['table'] = 'field_data_field_organizations';
   $handler->display->display_options['relationships']['field_organizations_tid']['field'] = 'field_organizations_tid';
@@ -470,17 +470,17 @@ function acc_applications_views_default_views() {
     'thousand_separator' => ' ',
     'prefix_suffix' => 1,
   );
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_submition_status']['id'] = 'field_submition_status';
-  $handler->display->display_options['fields']['field_submition_status']['table'] = 'field_data_field_submition_status';
-  $handler->display->display_options['fields']['field_submition_status']['field'] = 'field_submition_status';
-  $handler->display->display_options['fields']['field_submition_status']['label'] = 'Submission Status';
   /* Field: Taxonomy term: Type */
   $handler->display->display_options['fields']['field_organization_type']['id'] = 'field_organization_type';
   $handler->display->display_options['fields']['field_organization_type']['table'] = 'field_data_field_organization_type';
   $handler->display->display_options['fields']['field_organization_type']['field'] = 'field_organization_type';
   $handler->display->display_options['fields']['field_organization_type']['relationship'] = 'field_organizations_tid';
   $handler->display->display_options['fields']['field_organization_type']['label'] = 'Organization Type';
+  /* Field: Content: Submission Status */
+  $handler->display->display_options['fields']['field_acc_submission_status']['id'] = 'field_acc_submission_status';
+  $handler->display->display_options['fields']['field_acc_submission_status']['table'] = 'field_data_field_acc_submission_status';
+  $handler->display->display_options['fields']['field_acc_submission_status']['field'] = 'field_acc_submission_status';
+  $handler->display->display_options['fields']['field_acc_submission_status']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['block_description'] = 'Average number of days to get an answer by organization type ';
 
@@ -497,20 +497,12 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'views_pivot';
   $handler->display->display_options['style_options']['columns'] = array(
     'field_how_many_days' => 'field_how_many_days',
-    'field_submition_status' => 'field_submition_status',
     'field_clusters' => 'field_clusters',
+    'field_acc_submission_status' => 'field_acc_submission_status',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
     'field_how_many_days' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-      'pivot_row_extra' => 0,
-    ),
-    'field_submition_status' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -524,8 +516,16 @@ function acc_applications_views_default_views() {
       'empty_column' => 0,
       'pivot_row_extra' => 0,
     ),
+    'field_acc_submission_status' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+      'pivot_row_extra' => 0,
+    ),
   );
-  $handler->display->display_options['style_options']['pivot_col'] = 'field_submition_status';
+  $handler->display->display_options['style_options']['pivot_col'] = 'field_acc_submission_status';
   $handler->display->display_options['style_options']['pivot_row'] = 'field_clusters';
   $handler->display->display_options['style_options']['pivot_mode_multi_values'] = '0';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -544,11 +544,6 @@ function acc_applications_views_default_views() {
     'thousand_separator' => ' ',
     'prefix_suffix' => 1,
   );
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_submition_status']['id'] = 'field_submition_status';
-  $handler->display->display_options['fields']['field_submition_status']['table'] = 'field_data_field_submition_status';
-  $handler->display->display_options['fields']['field_submition_status']['field'] = 'field_submition_status';
-  $handler->display->display_options['fields']['field_submition_status']['label'] = 'Submission Status';
   /* Field: Field: Clusters */
   $handler->display->display_options['fields']['field_clusters']['id'] = 'field_clusters';
   $handler->display->display_options['fields']['field_clusters']['table'] = 'field_data_field_clusters';
@@ -556,6 +551,11 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['field_clusters']['label'] = 'Sectors';
   $handler->display->display_options['fields']['field_clusters']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_clusters']['delta_offset'] = '0';
+  /* Field: Content: Submission Status */
+  $handler->display->display_options['fields']['field_acc_submission_status']['id'] = 'field_acc_submission_status';
+  $handler->display->display_options['fields']['field_acc_submission_status']['table'] = 'field_data_field_acc_submission_status';
+  $handler->display->display_options['fields']['field_acc_submission_status']['field'] = 'field_acc_submission_status';
+  $handler->display->display_options['fields']['field_acc_submission_status']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Field: Clusters (field_clusters) */
   $handler->display->display_options['sorts']['field_clusters_tid']['id'] = 'field_clusters_tid';
@@ -651,20 +651,12 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'views_pivot';
   $handler->display->display_options['style_options']['columns'] = array(
     'nid' => 'nid',
-    'field_submition_status' => 'field_submition_status',
     'name' => 'name',
+    'field_acc_submission_status' => 'field_acc_submission_status',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
     'nid' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-      'pivot_row_extra' => 0,
-    ),
-    'field_submition_status' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -680,8 +672,16 @@ function acc_applications_views_default_views() {
       'empty_column' => 0,
       'pivot_row_extra' => 0,
     ),
+    'field_acc_submission_status' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+      'pivot_row_extra' => 0,
+    ),
   );
-  $handler->display->display_options['style_options']['pivot_col'] = 'field_submition_status';
+  $handler->display->display_options['style_options']['pivot_col'] = 'field_acc_submission_status';
   $handler->display->display_options['style_options']['pivot_row'] = 'name';
   $handler->display->display_options['style_options']['pivot_mode_multi_values'] = '0';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -769,7 +769,7 @@ function acc_applications_views_default_views() {
     'block_9' => 0,
   );
   $handler->display->display_options['sitename_title'] = 0;
-  $translatables['acc_application'] = array(
+  $translatables['acc_application_reports'] = array(
     t('Master'),
     t('Access Application'),
     t('more'),
@@ -824,6 +824,401 @@ function acc_applications_views_default_views() {
     t('Number of Applications'),
   );
   $export['acc_application_reports'] = $view;
+
+  $view = new view();
+  $view->name = 'acc_applications';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'search_api_index_acc_applications';
+  $view->human_name = 'Access Applications';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Access Applications';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'entity';
+  $handler->display->display_options['row_options']['view_mode'] = 'teaser';
+  /* Field: Indexed Node: Node ID */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  /* Filter criterion: Search: Fulltext search */
+  $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['field'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator_id'] = 'search_api_views_fulltext_op';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['label'] = 'Search';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator'] = 'search_api_views_fulltext_op';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['identifier'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    218860149 => 0,
+    188284353 => 0,
+    200153887 => 0,
+    197637936 => 0,
+    52310416 => 0,
+    30037204 => 0,
+  );
+
+  /* Display: Master */
+  $handler = $view->new_display('page', 'Master', 'master');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'nid' => 'nid',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'nid' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['exposed_block'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Indexed Node: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['link_to_entity'] = 0;
+  /* Field: Indexed Node: Date  */
+  $handler->display->display_options['fields']['field_date_app']['id'] = 'field_date_app';
+  $handler->display->display_options['fields']['field_date_app']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_date_app']['field'] = 'field_date_app';
+  $handler->display->display_options['fields']['field_date_app']['settings'] = array(
+    'format_type' => 'short',
+    'fromto' => 'value',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Indexed Node: Geographical Location (Destination) */
+  $handler->display->display_options['fields']['field_geographical_location_dest']['id'] = 'field_geographical_location_dest';
+  $handler->display->display_options['fields']['field_geographical_location_dest']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_geographical_location_dest']['field'] = 'field_geographical_location_dest';
+  $handler->display->display_options['fields']['field_geographical_location_dest']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['field_geographical_location_dest']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_geographical_location_dest']['bypass_access'] = 0;
+  /* Field: Indexed Node: Nationality of the traveler */
+  $handler->display->display_options['fields']['field_acc_nationality']['id'] = 'field_acc_nationality';
+  $handler->display->display_options['fields']['field_acc_nationality']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_acc_nationality']['field'] = 'field_acc_nationality';
+  /* Field: Indexed Node: Submission Status */
+  $handler->display->display_options['fields']['field_acc_submission_status']['id'] = 'field_acc_submission_status';
+  $handler->display->display_options['fields']['field_acc_submission_status']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_acc_submission_status']['field'] = 'field_acc_submission_status';
+  $handler->display->display_options['fields']['field_acc_submission_status']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['field_acc_submission_status']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_acc_submission_status']['bypass_access'] = 0;
+  $handler->display->display_options['path'] = 'access/applications';
+  $handler->display->display_options['menu']['title'] = 'Table';
+  $handler->display->display_options['menu']['weight'] = '1';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $handler->display->display_options['tab_options']['weight'] = '0';
+
+  /* Display: Table */
+  $handler = $view->new_display('page', 'Table', 'table');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'nid' => 'nid',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'nid' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['exposed_block'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Indexed Node: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['link_to_entity'] = 0;
+  /* Field: Indexed Node: Date  */
+  $handler->display->display_options['fields']['field_date_app']['id'] = 'field_date_app';
+  $handler->display->display_options['fields']['field_date_app']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_date_app']['field'] = 'field_date_app';
+  $handler->display->display_options['fields']['field_date_app']['settings'] = array(
+    'format_type' => 'short',
+    'fromto' => 'value',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Indexed Node: Geographical Location (Destination) */
+  $handler->display->display_options['fields']['field_geographical_location_dest']['id'] = 'field_geographical_location_dest';
+  $handler->display->display_options['fields']['field_geographical_location_dest']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_geographical_location_dest']['field'] = 'field_geographical_location_dest';
+  $handler->display->display_options['fields']['field_geographical_location_dest']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['field_geographical_location_dest']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_geographical_location_dest']['bypass_access'] = 0;
+  /* Field: Indexed Node: Nationality of the traveler */
+  $handler->display->display_options['fields']['field_acc_nationality']['id'] = 'field_acc_nationality';
+  $handler->display->display_options['fields']['field_acc_nationality']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_acc_nationality']['field'] = 'field_acc_nationality';
+  /* Field: Indexed Node: Submission Status */
+  $handler->display->display_options['fields']['field_acc_submission_status']['id'] = 'field_acc_submission_status';
+  $handler->display->display_options['fields']['field_acc_submission_status']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_acc_submission_status']['field'] = 'field_acc_submission_status';
+  $handler->display->display_options['fields']['field_acc_submission_status']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['field_acc_submission_status']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_acc_submission_status']['bypass_access'] = 0;
+  $handler->display->display_options['path'] = 'access/applications/table';
+  $handler->display->display_options['menu']['type'] = 'default tab';
+  $handler->display->display_options['menu']['title'] = 'Table';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $handler->display->display_options['tab_options']['weight'] = '0';
+
+  /* Display: List */
+  $handler = $view->new_display('page', 'List', 'list');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'entity';
+  $handler->display->display_options['row_options']['view_mode'] = 'teaser';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['exposed_block'] = TRUE;
+  $handler->display->display_options['path'] = 'access/applications/list';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'List';
+  $handler->display->display_options['menu']['weight'] = '2';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: Graphs */
+  $handler = $view->new_display('page', 'Graphs', 'graphs');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '0';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  $handler->display->display_options['path'] = 'access/applications/graphs';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'Graphs';
+  $handler->display->display_options['menu']['weight'] = '4';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: XLS */
+  $handler = $view->new_display('views_data_export', 'XLS', 'xls');
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'views_data_export_xls';
+  $handler->display->display_options['style_options']['provide_file'] = 1;
+  $handler->display->display_options['style_options']['parent_sort'] = 0;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Indexed Node: Geographical Location (Destination) */
+  $handler->display->display_options['relationships']['field_geographical_location_dest']['id'] = 'field_geographical_location_dest';
+  $handler->display->display_options['relationships']['field_geographical_location_dest']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['relationships']['field_geographical_location_dest']['field'] = 'field_geographical_location_dest';
+  /* Relationship: Taxonomy term: Parent terms */
+  $handler->display->display_options['relationships']['parent']['id'] = 'parent';
+  $handler->display->display_options['relationships']['parent']['table'] = 'entity_taxonomy_term';
+  $handler->display->display_options['relationships']['parent']['field'] = 'parent';
+  $handler->display->display_options['relationships']['parent']['relationship'] = 'field_geographical_location_dest';
+  /* Relationship: Indexed Node: Source */
+  $handler->display->display_options['relationships']['field_organizations']['id'] = 'field_organizations';
+  $handler->display->display_options['relationships']['field_organizations']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['relationships']['field_organizations']['field'] = 'field_organizations';
+  $handler->display->display_options['relationships']['field_organizations']['label'] = 'Submited By';
+  /* Relationship: Indexed Node: Impacts of applications */
+  $handler->display->display_options['relationships']['field_acc_impacts']['id'] = 'field_acc_impacts';
+  $handler->display->display_options['relationships']['field_acc_impacts']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['relationships']['field_acc_impacts']['field'] = 'field_acc_impacts';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Indexed Node: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['link_to_entity'] = 0;
+  /* Field: Indexed Node: Date  */
+  $handler->display->display_options['fields']['field_date_app']['id'] = 'field_date_app';
+  $handler->display->display_options['fields']['field_date_app']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_date_app']['field'] = 'field_date_app';
+  $handler->display->display_options['fields']['field_date_app']['settings'] = array(
+    'format_type' => 'short',
+    'fromto' => 'value',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Indexed Node: Application Types */
+  $handler->display->display_options['fields']['field_acc_application_types']['id'] = 'field_acc_application_types';
+  $handler->display->display_options['fields']['field_acc_application_types']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_acc_application_types']['field'] = 'field_acc_application_types';
+  $handler->display->display_options['fields']['field_acc_application_types']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['field_acc_application_types']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_acc_application_types']['bypass_access'] = 0;
+  /* Field: Indexed Node: Source */
+  $handler->display->display_options['fields']['field_organizations']['id'] = 'field_organizations';
+  $handler->display->display_options['fields']['field_organizations']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_organizations']['field'] = 'field_organizations';
+  $handler->display->display_options['fields']['field_organizations']['label'] = 'Submitted By';
+  $handler->display->display_options['fields']['field_organizations']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['field_organizations']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_organizations']['bypass_access'] = 0;
+  /* Field: Taxonomy term: Type */
+  $handler->display->display_options['fields']['field_organization_type']['id'] = 'field_organization_type';
+  $handler->display->display_options['fields']['field_organization_type']['table'] = 'entity_taxonomy_term';
+  $handler->display->display_options['fields']['field_organization_type']['field'] = 'field_organization_type';
+  $handler->display->display_options['fields']['field_organization_type']['relationship'] = 'field_organizations';
+  $handler->display->display_options['fields']['field_organization_type']['label'] = 'Organization Type';
+  $handler->display->display_options['fields']['field_organization_type']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['field_organization_type']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_organization_type']['bypass_access'] = 0;
+  /* Field: Taxonomy term: Parent terms */
+  $handler->display->display_options['fields']['parent']['id'] = 'parent';
+  $handler->display->display_options['fields']['parent']['table'] = 'entity_taxonomy_term';
+  $handler->display->display_options['fields']['parent']['field'] = 'parent';
+  $handler->display->display_options['fields']['parent']['relationship'] = 'field_geographical_location_dest';
+  /* Field: Indexed Node: Geographical Location (Destination) */
+  $handler->display->display_options['fields']['field_geographical_location_dest']['id'] = 'field_geographical_location_dest';
+  $handler->display->display_options['fields']['field_geographical_location_dest']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_geographical_location_dest']['field'] = 'field_geographical_location_dest';
+  $handler->display->display_options['fields']['field_geographical_location_dest']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['field_geographical_location_dest']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_geographical_location_dest']['bypass_access'] = 0;
+  /* Field: Indexed Node: Nationality of the traveler */
+  $handler->display->display_options['fields']['field_acc_nationality']['id'] = 'field_acc_nationality';
+  $handler->display->display_options['fields']['field_acc_nationality']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_acc_nationality']['field'] = 'field_acc_nationality';
+  /* Field: Indexed Node: Submitted To */
+  $handler->display->display_options['fields']['field_submited_to']['id'] = 'field_submited_to';
+  $handler->display->display_options['fields']['field_submited_to']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_submited_to']['field'] = 'field_submited_to';
+  $handler->display->display_options['fields']['field_submited_to']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['field_submited_to']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_submited_to']['bypass_access'] = 0;
+  /* Field: Indexed Node: Submission Status */
+  $handler->display->display_options['fields']['field_acc_submission_status']['id'] = 'field_acc_submission_status';
+  $handler->display->display_options['fields']['field_acc_submission_status']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_acc_submission_status']['field'] = 'field_acc_submission_status';
+  $handler->display->display_options['fields']['field_acc_submission_status']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['field_acc_submission_status']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_acc_submission_status']['bypass_access'] = 0;
+  /* Field: Indexed Node: If denied, by whom? */
+  $handler->display->display_options['fields']['field_if_denied_app']['id'] = 'field_if_denied_app';
+  $handler->display->display_options['fields']['field_if_denied_app']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_if_denied_app']['field'] = 'field_if_denied_app';
+  $handler->display->display_options['fields']['field_if_denied_app']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['field_if_denied_app']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_if_denied_app']['bypass_access'] = 0;
+  /* Field: Indexed Node: How many days to get an answer? */
+  $handler->display->display_options['fields']['field_how_many_days']['id'] = 'field_how_many_days';
+  $handler->display->display_options['fields']['field_how_many_days']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_how_many_days']['field'] = 'field_how_many_days';
+  $handler->display->display_options['fields']['field_how_many_days']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Indexed Node: Cluster */
+  $handler->display->display_options['fields']['field_clusters']['id'] = 'field_clusters';
+  $handler->display->display_options['fields']['field_clusters']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_clusters']['field'] = 'field_clusters';
+  $handler->display->display_options['fields']['field_clusters']['label'] = 'Sector';
+  $handler->display->display_options['fields']['field_clusters']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['field_clusters']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_clusters']['bypass_access'] = 0;
+  /* Field: Indexed Node: The main body text */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = 'Description';
+  /* Field: Field collection item: Type of impact */
+  $handler->display->display_options['fields']['field_acc_impact_type']['id'] = 'field_acc_impact_type';
+  $handler->display->display_options['fields']['field_acc_impact_type']['table'] = 'entity_field_collection_item';
+  $handler->display->display_options['fields']['field_acc_impact_type']['field'] = 'field_acc_impact_type';
+  $handler->display->display_options['fields']['field_acc_impact_type']['relationship'] = 'field_acc_impacts';
+  /* Field: Field collection item: Value */
+  $handler->display->display_options['fields']['field_acc_impact_value']['id'] = 'field_acc_impact_value';
+  $handler->display->display_options['fields']['field_acc_impact_value']['table'] = 'entity_field_collection_item';
+  $handler->display->display_options['fields']['field_acc_impact_value']['field'] = 'field_acc_impact_value';
+  $handler->display->display_options['fields']['field_acc_impact_value']['relationship'] = 'field_acc_impacts';
+  $handler->display->display_options['fields']['field_acc_impact_value']['label'] = 'Value of impact';
+  $handler->display->display_options['fields']['field_acc_impact_value']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  $handler->display->display_options['path'] = 'access/applications/xls';
+  $handler->display->display_options['displays'] = array(
+    'master' => 'master',
+    'table' => 'table',
+    'list' => 'list',
+    'default' => 0,
+    'graphs' => 0,
+  );
+  $translatables['acc_applications'] = array(
+    t('Master'),
+    t('Access Applications'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('Node ID'),
+    t('.'),
+    t(','),
+    t('Search'),
+    t('Title'),
+    t('Date '),
+    t('Geographical Location (Destination)'),
+    t('Nationality of the traveler'),
+    t('Submission Status'),
+    t('Table'),
+    t('List'),
+    t('Graphs'),
+    t('XLS'),
+    t('Parent terms'),
+    t('Submited By'),
+    t('Impacts of applications'),
+    t('Application Types'),
+    t('Submitted By'),
+    t('Organization Type'),
+    t('Submitted To'),
+    t('If denied, by whom?'),
+    t('How many days to get an answer?'),
+    t('Sector'),
+    t('Description'),
+    t('Type of impact'),
+    t('Value of impact'),
+  );
+  $export['acc_applications'] = $view;
 
   return $export;
 }
