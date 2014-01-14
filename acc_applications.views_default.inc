@@ -102,7 +102,7 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['field_acc_application_types']['table'] = 'field_data_field_acc_application_types';
   $handler->display->display_options['fields']['field_acc_application_types']['field'] = 'field_acc_application_types';
   $handler->display->display_options['fields']['field_acc_application_types']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Field: Organization */
+  /* Field: Field: Source */
   $handler->display->display_options['fields']['field_organizations']['id'] = 'field_organizations';
   $handler->display->display_options['fields']['field_organizations']['table'] = 'field_data_field_organizations';
   $handler->display->display_options['fields']['field_organizations']['field'] = 'field_organizations';
@@ -220,7 +220,7 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Field: Organization (field_organizations) */
+  /* Relationship: Field: Source (field_organizations) */
   $handler->display->display_options['relationships']['field_organizations_tid']['id'] = 'field_organizations_tid';
   $handler->display->display_options['relationships']['field_organizations_tid']['table'] = 'field_data_field_organizations';
   $handler->display->display_options['relationships']['field_organizations_tid']['field'] = 'field_organizations_tid';
@@ -454,7 +454,7 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Field: Organization (field_organizations) */
+  /* Relationship: Field: Source (field_organizations) */
   $handler->display->display_options['relationships']['field_organizations_tid']['id'] = 'field_organizations_tid';
   $handler->display->display_options['relationships']['field_organizations_tid']['table'] = 'field_data_field_organizations';
   $handler->display->display_options['relationships']['field_organizations_tid']['field'] = 'field_organizations_tid';
