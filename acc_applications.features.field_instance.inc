@@ -28,7 +28,7 @@ function acc_applications_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 8,
       ),
     ),
     'entity_type' => 'node',
@@ -48,14 +48,14 @@ function acc_applications_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 14,
+      'weight' => 15,
     ),
   );
 
   // Exported field_instance: 'node-acc_application-field_acc_application_types'
   $field_instances['node-acc_application-field_acc_application_types'] = array(
     'bundle' => 'acc_application',
-    'default_value' => array(),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -68,15 +68,16 @@ function acc_applications_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'above',
+        'module' => 'hs_taxonomy',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 12,
+        'type' => 'hs_taxonomy_term_reference_hierarchical_text',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_acc_application_types',
     'label' => 'Application Types',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
@@ -84,9 +85,7 @@ function acc_applications_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'hs_taxonomy',
-      'settings' => array(
-        'apply_chosen' => 0,
-      ),
+      'settings' => array(),
       'type' => 'taxonomy_hs',
       'weight' => 1,
     ),
@@ -116,7 +115,7 @@ function acc_applications_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 7,
       ),
     ),
     'entity_type' => 'node',
@@ -132,48 +131,7 @@ function acc_applications_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 13,
-    ),
-  );
-
-  // Exported field_instance: 'node-acc_application-field_acc_nationality'
-  $field_instances['node-acc_application-field_acc_nationality'] = array(
-    'bundle' => 'acc_application',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'countries',
-        'settings' => array(),
-        'type' => 'country_default',
-        'weight' => 15,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'module' => 'countries',
-        'settings' => array(),
-        'type' => 'country_default',
-        'weight' => 2,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_acc_nationality',
-    'label' => 'Nationality of the traveler',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => 1,
-      ),
-      'type' => 'options_select',
-      'weight' => 3,
+      'weight' => 14,
     ),
   );
 
@@ -193,15 +151,16 @@ function acc_applications_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'above',
+        'module' => 'hs_taxonomy',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 16,
+        'type' => 'hs_taxonomy_term_reference_hierarchical_text',
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_acc_submission_status',
     'label' => 'Submission Status',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
@@ -211,7 +170,7 @@ function acc_applications_field_default_field_instances() {
       'module' => 'hs_taxonomy',
       'settings' => array(),
       'type' => 'taxonomy_hs',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -233,7 +192,7 @@ function acc_applications_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 10,
       ),
     ),
     'entity_type' => 'node',
@@ -251,7 +210,7 @@ function acc_applications_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_buttons',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -276,15 +235,22 @@ function acc_applications_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 19,
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_date_app',
     'label' => 'Date ',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'default_value' => 'now',
       'default_value2' => 'same',
@@ -326,10 +292,9 @@ function acc_applications_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'above',
-        'module' => 'hs_taxonomy',
         'settings' => array(),
-        'type' => 'hs_taxonomy_term_reference_hierarchical_text',
-        'weight' => 1,
+        'type' => 'hidden',
+        'weight' => 4,
       ),
     ),
     'entity_type' => 'node',
@@ -345,7 +310,7 @@ function acc_applications_field_default_field_instances() {
       'module' => 'hs_taxonomy',
       'settings' => array(),
       'type' => 'taxonomy_hs',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -372,7 +337,7 @@ function acc_applications_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 13,
       ),
     ),
     'entity_type' => 'node',
@@ -392,7 +357,7 @@ function acc_applications_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -414,7 +379,7 @@ function acc_applications_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 12,
       ),
     ),
     'entity_type' => 'node',
@@ -432,7 +397,7 @@ function acc_applications_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -454,7 +419,7 @@ function acc_applications_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 11,
       ),
     ),
     'entity_type' => 'node',
@@ -470,7 +435,88 @@ function acc_applications_field_default_field_instances() {
       'module' => 'hs_taxonomy',
       'settings' => array(),
       'type' => 'taxonomy_hs',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-acc_application-field_nationality'
+  $field_instances['node-acc_application-field_nationality'] = array(
+    'bundle' => 'acc_application',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 17,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_nationality',
+    'label' => 'Nationality',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 1,
+      ),
+      'type' => 'options_select',
       'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-acc_application-field_organization_type'
+  $field_instances['node-acc_application-field_organization_type'] = array(
+    'bundle' => 'acc_application',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 19,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'module' => 'hs_taxonomy',
+        'settings' => array(),
+        'type' => 'hs_taxonomy_term_reference_hierarchical_text',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_organization_type',
+    'label' => 'Sunmitted By Organization Type',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 3,
     ),
   );
 
@@ -486,13 +532,13 @@ function acc_applications_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 2,
+        'weight' => 18,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 6,
       ),
     ),
     'entity_type' => 'node',
@@ -532,7 +578,7 @@ function acc_applications_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 9,
       ),
     ),
     'entity_type' => 'node',
@@ -550,7 +596,7 @@ function acc_applications_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -596,12 +642,13 @@ function acc_applications_field_default_field_instances() {
   t('How many days to get an answer?');
   t('If denied, by whom?');
   t('Impacts of applications');
-  t('Nationality of the traveler');
+  t('Nationality');
   t('Related to Access ');
   t('Sectors');
   t('Submission Status');
   t('Submitted By');
   t('Submitted To');
+  t('Sunmitted By Organization Type');
 
   return $field_instances;
 }

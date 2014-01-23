@@ -20,6 +20,9 @@ function acc_applications_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "feeds_tamper" && $api == "feeds_tamper_default") {
     return array("version" => "2");
   }
+  if ($module == "openlayers" && $api == "openlayers_maps") {
+    return array("version" => "1");
+  }
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -71,18 +74,24 @@ function acc_applications_default_search_api_index() {
         "field_organizations" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_clusters" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_locations" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
-        "field_submited_to" : { "type" : "integer", "entity_type" : "taxonomy_term" },
-        "field_if_denied_app" : { "type" : "integer", "entity_type" : "taxonomy_term" },
-        "field_how_many_days" : { "type" : "integer" },
-        "field_geographical_location_dest" : { "type" : "integer", "entity_type" : "taxonomy_term" },
+        "field_acc_impacts" : {
+          "type" : "list\\u003Cinteger\\u003E",
+          "entity_type" : "field_collection_item"
+        },
+        "field_organization_type" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "field_acc_application_types" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "field_acc_submission_status" : { "type" : "integer", "entity_type" : "taxonomy_term" },
+        "field_geographical_location_dest" : { "type" : "integer", "entity_type" : "taxonomy_term" },
+        "field_how_many_days" : { "type" : "integer" },
+        "field_if_denied_app" : { "type" : "integer", "entity_type" : "taxonomy_term" },
+        "field_submited_to" : { "type" : "integer", "entity_type" : "taxonomy_term" },
+        "field_nationality" : { "type" : "list\\u003Cstring\\u003E" },
         "search_api_language" : { "type" : "string" },
         "search_api_access_node" : { "type" : "list\\u003Cstring\\u003E" },
+        "field_acc_impacts:field_acc_impact_type" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_date_app:value" : { "type" : "date" },
         "field_date_app:value2" : { "type" : "date" },
-        "field_date_app:duration" : { "type" : "duration" },
-        "field_acc_nationality:iso2" : { "type" : "text" }
+        "field_date_app:duration" : { "type" : "duration" }
       },
       "data_alter_callbacks" : {
         "search_api_alter_bundle_filter" : {

@@ -13,6 +13,27 @@ function acc_applications_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'auto_entitylabel_node_acc_application';
+  $strongarm->value = '2';
+  $export['auto_entitylabel_node_acc_application'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'auto_entitylabel_pattern_node_acc_application';
+  $strongarm->value = '[node:field-acc-application-types] [node:field_acc_incident_date] [node:field-geographical-location-dest]';
+  $export['auto_entitylabel_pattern_node_acc_application'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'auto_entitylabel_php_node_acc_application';
+  $strongarm->value = 0;
+  $export['auto_entitylabel_php_node_acc_application'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_acc_application';
   $strongarm->value = '1';
   $export['comment_acc_application'] = $strongarm;
@@ -89,7 +110,7 @@ function acc_applications_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '11',
+          'weight' => '12',
         ),
       ),
       'display' => array(),

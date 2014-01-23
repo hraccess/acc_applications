@@ -13,6 +13,70 @@ function acc_applications_feeds_importer_default() {
   $feeds_importer = new stdClass();
   $feeds_importer->disabled = FALSE; /* Edit this to true to make a default feeds_importer disabled initially */
   $feeds_importer->api_version = 1;
+  $feeds_importer->id = 'acc_submission_status';
+  $feeds_importer->config = array(
+    'name' => 'Access Submission Status',
+    'description' => '',
+    'fetcher' => array(
+      'plugin_key' => 'FeedsHTTPFetcher',
+      'config' => array(
+        'auto_detect_feeds' => FALSE,
+        'use_pubsubhubbub' => FALSE,
+        'designated_hub' => '',
+        'request_timeout' => NULL,
+      ),
+    ),
+    'parser' => array(
+      'plugin_key' => 'FeedsCSVParser',
+      'config' => array(
+        'delimiter' => ',',
+        'no_headers' => 0,
+      ),
+    ),
+    'processor' => array(
+      'plugin_key' => 'FeedsTermProcessor',
+      'config' => array(
+        'vocabulary' => 0,
+        'mappings' => array(
+          0 => array(
+            'source' => 'Name:en',
+            'target' => 'name',
+            'unique' => FALSE,
+          ),
+          1 => array(
+            'source' => 'GUID',
+            'target' => 'guid',
+            'unique' => FALSE,
+          ),
+          2 => array(
+            'source' => 'Parent',
+            'target' => 'parent',
+            'unique' => FALSE,
+          ),
+          3 => array(
+            'source' => 'UUID',
+            'target' => 'uuid:uuid',
+            'unique' => FALSE,
+          ),
+        ),
+        'update_existing' => '2',
+        'input_format' => 'plain_text',
+        'skip_hash_check' => 0,
+        'bundle' => 'acc_application_submission_status',
+      ),
+    ),
+    'content_type' => '',
+    'update' => 0,
+    'import_period' => '86400',
+    'expire_period' => 3600,
+    'import_on_create' => 1,
+    'process_in_background' => 0,
+  );
+  $export['acc_submission_status'] = $feeds_importer;
+
+  $feeds_importer = new stdClass();
+  $feeds_importer->disabled = FALSE; /* Edit this to true to make a default feeds_importer disabled initially */
+  $feeds_importer->api_version = 1;
   $feeds_importer->id = 'csv_acc_application';
   $feeds_importer->config = array(
     'name' => 'CSV Access Application',
@@ -60,57 +124,62 @@ function acc_applications_feeds_importer_default() {
             'unique' => FALSE,
           ),
           3 => array(
+            'source' => 'Organization Type',
+            'target' => 'field_organization_type',
+            'unique' => FALSE,
+          ),
+          4 => array(
             'source' => 'Submitted By',
             'target' => 'field_organizations',
             'term_search' => '0',
             'autocreate' => 0,
           ),
-          4 => array(
+          5 => array(
             'source' => 'Submitted To',
             'target' => 'field_submited_to',
             'term_search' => '0',
             'autocreate' => 0,
           ),
-          5 => array(
+          6 => array(
             'source' => 'If denied, by whom?',
             'target' => 'field_if_denied_app',
             'term_search' => '0',
             'autocreate' => 0,
           ),
-          6 => array(
+          7 => array(
             'source' => 'How many days to get an answer?',
             'target' => 'field_how_many_days',
             'unique' => FALSE,
           ),
-          7 => array(
+          8 => array(
             'source' => 'Sectors',
             'target' => 'field_clusters',
             'term_search' => '0',
             'autocreate' => 0,
           ),
-          8 => array(
+          9 => array(
             'source' => 'Geograpical Location Destination',
             'target' => 'field_geographical_location_dest',
             'term_search' => '0',
             'autocreate' => 0,
           ),
-          9 => array(
+          10 => array(
             'source' => 'Submission Status',
             'target' => 'field_acc_submission_status',
             'term_search' => '0',
             'autocreate' => 0,
           ),
-          10 => array(
+          11 => array(
             'source' => 'Nationality of traveler',
             'target' => 'node:acc_application:field_acc_nationality:name',
             'unique' => FALSE,
           ),
-          11 => array(
+          12 => array(
             'source' => 'Type of impact',
             'target' => 'field_acc_impacts:field_acc_impact_type:label',
             'unique' => FALSE,
           ),
-          12 => array(
+          13 => array(
             'source' => 'Impact value',
             'target' => 'field_acc_impacts:field_acc_impact_value',
             'unique' => FALSE,
