@@ -71,14 +71,13 @@ function acc_applications_default_search_api_index() {
         "status" : { "type" : "boolean" },
         "created" : { "type" : "date" },
         "author" : { "type" : "integer", "entity_type" : "user" },
-        "field_organizations" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_clusters" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_locations" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
+        "field_organizations" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_acc_impacts" : {
           "type" : "list\\u003Cinteger\\u003E",
           "entity_type" : "field_collection_item"
         },
-        "field_organization_type" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "field_acc_application_types" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "field_acc_submission_status" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "field_geographical_location_dest" : { "type" : "integer", "entity_type" : "taxonomy_term" },
@@ -86,12 +85,16 @@ function acc_applications_default_search_api_index() {
         "field_if_denied_app" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "field_submited_to" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "field_nationality" : { "type" : "list\\u003Cstring\\u003E" },
+        "field_organization_type" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "search_api_language" : { "type" : "string" },
         "search_api_access_node" : { "type" : "list\\u003Cstring\\u003E" },
         "field_acc_impacts:field_acc_impact_type" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_date_app:value" : { "type" : "date" },
         "field_date_app:value2" : { "type" : "date" },
-        "field_date_app:duration" : { "type" : "duration" }
+        "field_date_app:duration" : { "type" : "duration" },
+        "field_geographical_location_dest:parent" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
+        "field_geographical_location_dest:field_location:lat" : { "type" : "decimal" },
+        "field_geographical_location_dest:field_location:lon" : { "type" : "decimal" }
       },
       "data_alter_callbacks" : {
         "search_api_alter_bundle_filter" : {
