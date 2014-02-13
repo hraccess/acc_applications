@@ -117,7 +117,7 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['field_acc_application_types']['table'] = 'field_data_field_acc_application_types';
   $handler->display->display_options['fields']['field_acc_application_types']['field'] = 'field_acc_application_types';
   $handler->display->display_options['fields']['field_acc_application_types']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Field: Source */
+  /* Field: Field: Organization */
   $handler->display->display_options['fields']['field_organizations']['id'] = 'field_organizations';
   $handler->display->display_options['fields']['field_organizations']['table'] = 'field_data_field_organizations';
   $handler->display->display_options['fields']['field_organizations']['field'] = 'field_organizations';
@@ -877,7 +877,7 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['field_acc_application_types']['table'] = 'field_data_field_acc_application_types';
   $handler->display->display_options['fields']['field_acc_application_types']['field'] = 'field_acc_application_types';
   $handler->display->display_options['fields']['field_acc_application_types']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Field: Source */
+  /* Field: Field: Organization */
   $handler->display->display_options['fields']['field_organizations']['id'] = 'field_organizations';
   $handler->display->display_options['fields']['field_organizations']['table'] = 'field_data_field_organizations';
   $handler->display->display_options['fields']['field_organizations']['field'] = 'field_organizations';

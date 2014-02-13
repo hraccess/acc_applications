@@ -21,7 +21,6 @@ function acc_applications_context_default_contexts() {
       'values' => array(
         'acc_applications:list' => 'acc_applications:list',
         'acc_applications:map' => 'acc_applications:map',
-        'acc_applications:master' => 'acc_applications:master',
         'acc_applications:table' => 'acc_applications:table',
       ),
     ),
@@ -29,12 +28,6 @@ function acc_applications_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views--exp-acc_applications-master' => array(
-          'module' => 'views',
-          'delta' => '-exp-acc_applications-master',
-          'region' => 'sidebar_first',
-          'weight' => '-84',
-        ),
         'facetapi-mKYj0BXj2qODeSFz7lvPiWbdjjztAJAi' => array(
           'module' => 'facetapi',
           'delta' => 'mKYj0BXj2qODeSFz7lvPiWbdjjztAJAi',
@@ -285,7 +278,13 @@ function acc_applications_context_default_contexts() {
   $context->name = 'acc_applications_map';
   $context->description = '';
   $context->tag = 'Access Application';
-  $context->conditions = array();
+  $context->conditions = array(
+    'views' => array(
+      'values' => array(
+        'acc_applications:map' => 'acc_applications:map',
+      ),
+    ),
+  );
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
@@ -314,6 +313,7 @@ function acc_applications_context_default_contexts() {
   $context->conditions = array(
     'views' => array(
       'values' => array(
+        'acc_applications:master' => 'acc_applications:master',
         'acc_applications:table' => 'acc_applications:table',
       ),
     ),
