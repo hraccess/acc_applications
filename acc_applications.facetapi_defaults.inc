@@ -32,7 +32,7 @@ function acc_applications_facetapi_default_facet_settings() {
     'query_type' => 'date',
     'default_true' => '1',
     'facet_search_ids' => array(),
-    'date_granularity' => 'DAY',
+    'date_granularity' => 'MONTH',
     'pretty_paths_alias' => 'created',
   );
   $export['search_api@acc_applications::created'] = $facet;

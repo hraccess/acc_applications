@@ -10,6 +10,39 @@
 function acc_applications_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: 'clear acc_submission_status feeds'.
+  $permissions['clear acc_submission_status feeds'] = array(
+    'name' => 'clear acc_submission_status feeds',
+    'roles' => array(
+      'access manager' => 'access manager',
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+    ),
+    'module' => 'feeds',
+  );
+
+  // Exported permission: 'clear csv_acc_application feeds'.
+  $permissions['clear csv_acc_application feeds'] = array(
+    'name' => 'clear csv_acc_application feeds',
+    'roles' => array(
+      'access manager' => 'access manager',
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+    ),
+    'module' => 'feeds',
+  );
+
+  // Exported permission: 'clear csv_acc_application_types feeds'.
+  $permissions['clear csv_acc_application_types feeds'] = array(
+    'name' => 'clear csv_acc_application_types feeds',
+    'roles' => array(
+      'access manager' => 'access manager',
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+    ),
+    'module' => 'feeds',
+  );
+
   // Exported permission: 'create acc_application content'.
   $permissions['create acc_application content'] = array(
     'name' => 'create acc_application content',
@@ -64,6 +97,72 @@ function acc_applications_user_default_permissions() {
       'manager' => 'manager',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'import acc_submission_status feeds'.
+  $permissions['import acc_submission_status feeds'] = array(
+    'name' => 'import acc_submission_status feeds',
+    'roles' => array(
+      'access manager' => 'access manager',
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+    ),
+    'module' => 'feeds',
+  );
+
+  // Exported permission: 'import csv_acc_application feeds'.
+  $permissions['import csv_acc_application feeds'] = array(
+    'name' => 'import csv_acc_application feeds',
+    'roles' => array(
+      'access manager' => 'access manager',
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+    ),
+    'module' => 'feeds',
+  );
+
+  // Exported permission: 'import csv_acc_application_types feeds'.
+  $permissions['import csv_acc_application_types feeds'] = array(
+    'name' => 'import csv_acc_application_types feeds',
+    'roles' => array(
+      'access manager' => 'access manager',
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+    ),
+    'module' => 'feeds',
+  );
+
+  // Exported permission: 'unlock acc_submission_status feeds'.
+  $permissions['unlock acc_submission_status feeds'] = array(
+    'name' => 'unlock acc_submission_status feeds',
+    'roles' => array(
+      'access manager' => 'access manager',
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+    ),
+    'module' => 'feeds',
+  );
+
+  // Exported permission: 'unlock csv_acc_application feeds'.
+  $permissions['unlock csv_acc_application feeds'] = array(
+    'name' => 'unlock csv_acc_application feeds',
+    'roles' => array(
+      'access manager' => 'access manager',
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+    ),
+    'module' => 'feeds',
+  );
+
+  // Exported permission: 'unlock csv_acc_application_types feeds'.
+  $permissions['unlock csv_acc_application_types feeds'] = array(
+    'name' => 'unlock csv_acc_application_types feeds',
+    'roles' => array(
+      'access manager' => 'access manager',
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+    ),
+    'module' => 'feeds',
   );
 
   return $permissions;
