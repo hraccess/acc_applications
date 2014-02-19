@@ -265,7 +265,7 @@ function acc_applications_field_default_field_instances() {
       'settings' => array(
         'apply_chosen' => 0,
         'increment' => 15,
-        'input_format' => 'm/d/Y - H:i:s',
+        'input_format' => 'j M Y - H:i:s',
         'input_format_custom' => '',
         'label_position' => 'above',
         'text_parts' => array(),

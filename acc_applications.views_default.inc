@@ -1915,7 +1915,7 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['field_date_app']['table'] = 'search_api_index_acc_applications';
   $handler->display->display_options['fields']['field_date_app']['field'] = 'field_date_app';
   $handler->display->display_options['fields']['field_date_app']['settings'] = array(
-    'format_type' => 'short',
+    'format_type' => 'access_short_date',
     'fromto' => 'value',
     'multiple_number' => '',
     'multiple_from' => '',

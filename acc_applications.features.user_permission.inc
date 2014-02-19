@@ -76,6 +76,24 @@ function acc_applications_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete terms in acc_application_submission_status'.
+  $permissions['delete terms in acc_application_submission_status'] = array(
+    'name' => 'delete terms in acc_application_submission_status',
+    'roles' => array(
+      'access manager' => 'access manager',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'delete terms in acc_application_types'.
+  $permissions['delete terms in acc_application_types'] = array(
+    'name' => 'delete terms in acc_application_types',
+    'roles' => array(
+      'access manager' => 'access manager',
+    ),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'edit any acc_application content'.
   $permissions['edit any acc_application content'] = array(
     'name' => 'edit any acc_application content',
@@ -97,6 +115,24 @@ function acc_applications_user_default_permissions() {
       'manager' => 'manager',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'edit terms in acc_application_submission_status'.
+  $permissions['edit terms in acc_application_submission_status'] = array(
+    'name' => 'edit terms in acc_application_submission_status',
+    'roles' => array(
+      'access manager' => 'access manager',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in acc_application_types'.
+  $permissions['edit terms in acc_application_types'] = array(
+    'name' => 'edit terms in acc_application_types',
+    'roles' => array(
+      'access manager' => 'access manager',
+    ),
+    'module' => 'taxonomy',
   );
 
   // Exported permission: 'import acc_submission_status feeds'.
