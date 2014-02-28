@@ -21,6 +21,7 @@ function acc_applications_context_default_contexts() {
       'values' => array(
         'acc_applications:list' => 'acc_applications:list',
         'acc_applications:map' => 'acc_applications:map',
+        'acc_applications:master' => 'acc_applications:master',
         'acc_applications:table' => 'acc_applications:table',
       ),
     ),

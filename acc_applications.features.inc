@@ -78,7 +78,7 @@ function acc_applications_default_search_api_index() {
           "type" : "list\\u003Cinteger\\u003E",
           "entity_type" : "field_collection_item"
         },
-        "field_organization_type" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
+        "field_organization_type" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "field_acc_application_types" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "field_acc_submission_status" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "field_geographical_location_dest" : { "type" : "integer", "entity_type" : "taxonomy_term" },
