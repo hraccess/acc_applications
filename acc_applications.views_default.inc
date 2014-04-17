@@ -1914,6 +1914,7 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['field_date_app']['id'] = 'field_date_app';
   $handler->display->display_options['fields']['field_date_app']['table'] = 'search_api_index_acc_applications';
   $handler->display->display_options['fields']['field_date_app']['field'] = 'field_date_app';
+  $handler->display->display_options['fields']['field_date_app']['label'] = 'Start Date';
   $handler->display->display_options['fields']['field_date_app']['settings'] = array(
     'format_type' => 'access_short_date',
     'fromto' => 'value',
@@ -1950,15 +1951,14 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['field_nationality']['table'] = 'search_api_index_acc_applications';
   $handler->display->display_options['fields']['field_nationality']['field'] = 'field_nationality';
   $handler->display->display_options['fields']['field_nationality']['delta_offset'] = '0';
-  /* Field: Taxonomy term: Parent terms */
-  $handler->display->display_options['fields']['parent']['id'] = 'parent';
-  $handler->display->display_options['fields']['parent']['table'] = 'entity_taxonomy_term';
-  $handler->display->display_options['fields']['parent']['field'] = 'parent';
-  $handler->display->display_options['fields']['parent']['relationship'] = 'field_geographical_location_dest';
-  $handler->display->display_options['fields']['parent']['label'] = 'District';
-  $handler->display->display_options['fields']['parent']['link_to_entity'] = 1;
-  $handler->display->display_options['fields']['parent']['view_mode'] = 'full';
-  $handler->display->display_options['fields']['parent']['bypass_access'] = 0;
+  /* Field: Geographical Location (Destination): Parent terms (indexed) */
+  $handler->display->display_options['fields']['field_geographical_location_dest_parent']['id'] = 'field_geographical_location_dest_parent';
+  $handler->display->display_options['fields']['field_geographical_location_dest_parent']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_geographical_location_dest_parent']['field'] = 'field_geographical_location_dest_parent';
+  $handler->display->display_options['fields']['field_geographical_location_dest_parent']['label'] = 'Admin Level1';
+  $handler->display->display_options['fields']['field_geographical_location_dest_parent']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['field_geographical_location_dest_parent']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_geographical_location_dest_parent']['bypass_access'] = 0;
   /* Field: Indexed Node: Geographical Location (Destination) */
   $handler->display->display_options['fields']['field_geographical_location_dest']['id'] = 'field_geographical_location_dest';
   $handler->display->display_options['fields']['field_geographical_location_dest']['table'] = 'search_api_index_acc_applications';
@@ -2022,6 +2022,18 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['field_acc_impact_value']['settings'] = array(
     'thousand_separator' => ' ',
     'prefix_suffix' => 1,
+  );
+  /* Field: Indexed Node: Date  */
+  $handler->display->display_options['fields']['field_date_app_1']['id'] = 'field_date_app_1';
+  $handler->display->display_options['fields']['field_date_app_1']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_date_app_1']['field'] = 'field_date_app';
+  $handler->display->display_options['fields']['field_date_app_1']['label'] = 'End Date';
+  $handler->display->display_options['fields']['field_date_app_1']['settings'] = array(
+    'format_type' => 'access_short_date',
+    'fromto' => 'value2',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
   );
   $handler->display->display_options['path'] = 'access/applications/xls';
   $handler->display->display_options['displays'] = array(
@@ -2176,10 +2188,11 @@ function acc_applications_views_default_views() {
     t('Submited By'),
     t('Impacts'),
     t('Title'),
+    t('Start Date'),
     t('Submitted By'),
     t('Organization Type'),
     t('Nationality'),
-    t('District'),
+    t('Admin Level1'),
     t('Submitted To'),
     t('If denied, by whom?'),
     t('How many days to get an answer?'),
@@ -2187,6 +2200,7 @@ function acc_applications_views_default_views() {
     t('Description'),
     t('Type of impact'),
     t('Value of impact'),
+    t('End Date'),
     t('Reports Impediment on entry'),
     t('Map Restriction on movement'),
     t('Layer Map Restrictions'),
