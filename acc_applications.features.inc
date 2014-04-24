@@ -90,6 +90,7 @@ function acc_applications_default_search_api_index() {
         "search_api_access_node" : { "type" : "list\\u003Cstring\\u003E" },
         "field_acc_impacts:field_acc_impact_type" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_acc_impacts:field_acc_impact_value" : { "type" : "list\\u003Cinteger\\u003E" },
+        "field_acc_application_types:parent" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_date_app:value" : { "type" : "date" },
         "field_date_app:value2" : { "type" : "date" },
         "field_date_app:duration" : { "type" : "duration" },
