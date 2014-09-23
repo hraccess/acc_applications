@@ -17,36 +17,89 @@ function acc_applications_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_acc_application_types',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
     'foreign keys' => array(
-      'tid' => array(
+      'taxonomy_term_data' => array(
         'columns' => array(
-          'tid' => 'tid',
+          'target_id' => 'tid',
         ),
         'table' => 'taxonomy_term_data',
       ),
     ),
     'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
+      'target_id' => array(
+        0 => 'target_id',
       ),
     ),
     'locked' => 0,
-    'module' => 'taxonomy',
+    'module' => 'entityreference',
     'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'acc_application_types',
-          'parent' => 0,
+      'entity_translation_sync' => FALSE,
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'acc_application_types' => 'acc_application_types',
         ),
       ),
-      'entity_translation_sync' => FALSE,
-      'profile2_private' => FALSE,
+      'target_type' => 'taxonomy_term',
     ),
     'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
+    'type' => 'entityreference',
+  );
+
+  // Exported field_base: 'field_acc_geo_location_dest'
+  $field_bases['field_acc_geo_location_dest'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_acc_geo_location_dest',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(
+      'taxonomy_term_data' => array(
+        'columns' => array(
+          'target_id' => 'tid',
+        ),
+        'table' => 'taxonomy_term_data',
+      ),
+    ),
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'hr_location' => 'hr_location',
+        ),
+      ),
+      'profile2_private' => FALSE,
+      'target_type' => 'taxonomy_term',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
   );
 
   // Exported field_base: 'field_acc_submission_status'
@@ -60,32 +113,137 @@ function acc_applications_field_default_field_bases() {
       'type' => 0,
     ),
     'foreign keys' => array(
-      'tid' => array(
+      'taxonomy_term_data' => array(
         'columns' => array(
-          'tid' => 'tid',
+          'target_id' => 'tid',
         ),
         'table' => 'taxonomy_term_data',
       ),
     ),
     'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
+      'target_id' => array(
+        0 => 'target_id',
       ),
     ),
     'locked' => 0,
-    'module' => 'taxonomy',
+    'module' => 'entityreference',
     'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'acc_application_submission_status',
-          'parent' => 0,
+      'entity_translation_sync' => FALSE,
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'acc_application_submission_status' => 'acc_application_submission_status',
         ),
       ),
-      'entity_translation_sync' => FALSE,
       'profile2_private' => FALSE,
+      'target_type' => 'taxonomy_term',
     ),
     'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
+    'type' => 'entityreference',
+  );
+
+  // Exported field_base: 'field_acc_submitted_by'
+  $field_bases['field_acc_submitted_by'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_acc_submitted_by',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(
+      'taxonomy_term_data' => array(
+        'columns' => array(
+          'target_id' => 'tid',
+        ),
+        'table' => 'taxonomy_term_data',
+      ),
+    ),
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'hr_organization' => 'hr_organization',
+        ),
+      ),
+      'profile2_private' => FALSE,
+      'target_type' => 'taxonomy_term',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
+  );
+
+  // Exported field_base: 'field_acc_submitted_by_org_type'
+  $field_bases['field_acc_submitted_by_org_type'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_acc_submitted_by_org_type',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(
+      'taxonomy_term_data' => array(
+        'columns' => array(
+          'target_id' => 'tid',
+        ),
+        'table' => 'taxonomy_term_data',
+      ),
+    ),
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'hr_organization_type' => 'hr_organization_type',
+        ),
+      ),
+      'profile2_private' => FALSE,
+      'target_type' => 'taxonomy_term',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
   );
 
   // Exported field_base: 'field_date_app'
@@ -115,51 +273,13 @@ function acc_applications_field_default_field_bases() {
         'year' => 'year',
       ),
       'profile2_private' => FALSE,
+      'repeat' => 0,
       'timezone_db' => '',
       'todate' => 'optional',
       'tz_handling' => 'none',
     ),
     'translatable' => 0,
     'type' => 'datetime',
-  );
-
-  // Exported field_base: 'field_geographical_location_dest'
-  $field_bases['field_geographical_location_dest'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_geographical_location_dest',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
-    'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'taxonomy',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'locations',
-          'parent' => 0,
-        ),
-      ),
-      'entity_translation_sync' => FALSE,
-      'profile2_private' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
   );
 
   // Exported field_base: 'field_how_many_days'
@@ -184,43 +304,52 @@ function acc_applications_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_if_denied_app'
-  $field_bases['field_if_denied_app'] = array(
+  // Exported field_base: 'field_if_denied_by_whom_'
+  $field_bases['field_if_denied_by_whom_'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_if_denied_app',
+    'field_name' => 'field_if_denied_by_whom_',
     'field_permissions' => array(
       'type' => 0,
     ),
     'foreign keys' => array(
-      'tid' => array(
+      'taxonomy_term_data' => array(
         'columns' => array(
-          'tid' => 'tid',
+          'target_id' => 'tid',
         ),
         'table' => 'taxonomy_term_data',
       ),
     ),
     'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
+      'target_id' => array(
+        0 => 'target_id',
       ),
     ),
     'locked' => 0,
-    'module' => 'taxonomy',
+    'module' => 'entityreference',
     'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'organizations',
-          'parent' => 0,
+      'entity_translation_sync' => FALSE,
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'acc_responsible_actors' => 'acc_responsible_actors',
         ),
       ),
-      'entity_translation_sync' => FALSE,
       'profile2_private' => FALSE,
+      'target_type' => 'taxonomy_term',
     ),
     'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
+    'type' => 'entityreference',
   );
 
   // Exported field_base: 'field_nationality'
@@ -453,74 +582,52 @@ function acc_applications_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_related_to_access_'
-  $field_bases['field_related_to_access_'] = array(
+  // Exported field_base: 'field_submitted_to'
+  $field_bases['field_submitted_to'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_related_to_access_',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
-    'foreign keys' => array(),
-    'indexes' => array(
-      'value' => array(
-        0 => 'value',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'list',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => 'No',
-        1 => 'Yes',
-      ),
-      'allowed_values_function' => '',
-      'entity_translation_sync' => FALSE,
-      'profile2_private' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'list_boolean',
-  );
-
-  // Exported field_base: 'field_submited_to'
-  $field_bases['field_submited_to'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_submited_to',
+    'field_name' => 'field_submitted_to',
     'field_permissions' => array(
       'type' => 0,
     ),
     'foreign keys' => array(
-      'tid' => array(
+      'taxonomy_term_data' => array(
         'columns' => array(
-          'tid' => 'tid',
+          'target_id' => 'tid',
         ),
         'table' => 'taxonomy_term_data',
       ),
     ),
     'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
+      'target_id' => array(
+        0 => 'target_id',
       ),
     ),
     'locked' => 0,
-    'module' => 'taxonomy',
+    'module' => 'entityreference',
     'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'organizations',
-          'parent' => 0,
+      'entity_translation_sync' => FALSE,
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'acc_responsible_actors' => 'acc_responsible_actors',
         ),
       ),
-      'entity_translation_sync' => FALSE,
       'profile2_private' => FALSE,
+      'target_type' => 'taxonomy_term',
     ),
     'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
+    'type' => 'entityreference',
   );
 
   return $field_bases;

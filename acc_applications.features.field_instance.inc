@@ -22,13 +22,22 @@ function acc_applications_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 8,
+        'module' => 'text',
+        'settings' => array(
+          'trim_length' => 600,
+        ),
+        'type' => 'text_summary_or_trimmed',
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
@@ -48,46 +57,123 @@ function acc_applications_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 15,
+      'weight' => 13,
     ),
   );
 
   // Exported field_instance: 'node-acc_application-field_acc_application_types'
   $field_instances['node-acc_application-field_acc_application_types'] = array(
     'bundle' => 'acc_application',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 2,
+      ),
+      'search_result' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 6,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
-        'module' => 'hs_taxonomy',
         'settings' => array(),
-        'type' => 'hs_taxonomy_term_reference_hierarchical_text',
+        'type' => 'hidden',
         'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_acc_application_types',
     'label' => 'Application Types',
-    'required' => 1,
+    'required' => FALSE,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'hs_taxonomy',
-      'settings' => array(),
-      'type' => 'taxonomy_hs',
+      'module' => 'shs',
+      'settings' => array(
+        'apply_chosen' => '',
+        'shs' => array(
+          'create_new_levels' => FALSE,
+          'create_new_terms' => FALSE,
+          'force_deepest' => FALSE,
+          'node_count' => FALSE,
+        ),
+      ),
+      'type' => 'taxonomy_shs',
       'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'node-acc_application-field_acc_geo_location_dest'
+  $field_instances['node-acc_application-field_acc_geo_location_dest'] = array(
+    'bundle' => 'acc_application',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 8,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_acc_geo_location_dest',
+    'label' => 'Geographical Location (Destination)',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+        'taxonomy-index' => array(
+          'status' => TRUE,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'shs',
+      'settings' => array(
+        'shs' => array(
+          'create_new_levels' => 0,
+          'create_new_terms' => 0,
+          'force_deepest' => 0,
+          'node_count' => 0,
+          'use_chosen' => 'chosen',
+        ),
+      ),
+      'type' => 'taxonomy_shs',
+      'weight' => 7,
     ),
   );
 
@@ -109,18 +195,24 @@ function acc_applications_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_view',
-        'weight' => 16,
+        'weight' => 13,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_acc_impacts',
-    'label' => 'Impacts of applications',
+    'label' => 'Impacts',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -131,7 +223,7 @@ function acc_applications_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 14,
+      'weight' => 12,
     ),
   );
 
@@ -139,67 +231,45 @@ function acc_applications_field_default_field_instances() {
   $field_instances['node-acc_application-field_acc_submission_status'] = array(
     'bundle' => 'acc_application',
     'default_value' => NULL,
+    'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
         'weight' => 14,
       ),
-      'teaser' => array(
+      'search_result' => array(
         'label' => 'above',
-        'module' => 'hs_taxonomy',
         'settings' => array(),
-        'type' => 'hs_taxonomy_term_reference_hierarchical_text',
-        'weight' => 2,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_acc_submission_status',
-    'label' => 'Submission Status',
-    'required' => 1,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'hs_taxonomy',
-      'settings' => array(),
-      'type' => 'taxonomy_hs',
-      'weight' => 13,
-    ),
-  );
-
-  // Exported field_instance: 'node-acc_application-field_clusters'
-  $field_instances['node-acc_application-field_clusters'] = array(
-    'bundle' => 'acc_application',
-    'default_value' => array(),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 11,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_clusters',
-    'label' => 'Sectors',
+    'field_name' => 'field_acc_submission_status',
+    'label' => 'Submission Status',
     'required' => 0,
     'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+        'taxonomy-index' => array(
+          'status' => TRUE,
+        ),
+      ),
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
@@ -207,10 +277,124 @@ function acc_applications_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => 0,
+        'apply_chosen' => 1,
       ),
-      'type' => 'options_buttons',
-      'weight' => 11,
+      'type' => 'options_select',
+      'weight' => 31,
+    ),
+  );
+
+  // Exported field_instance: 'node-acc_application-field_acc_submitted_by'
+  $field_instances['node-acc_application-field_acc_submitted_by'] = array(
+    'bundle' => 'acc_application',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 5,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_acc_submitted_by',
+    'label' => 'Submitted By',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+        'taxonomy-index' => array(
+          'status' => TRUE,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 1,
+      ),
+      'type' => 'options_select',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node-acc_application-field_acc_submitted_by_org_type'
+  $field_instances['node-acc_application-field_acc_submitted_by_org_type'] = array(
+    'bundle' => 'acc_application',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 4,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_acc_submitted_by_org_type',
+    'label' => 'Submitted By Organization Type',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+        'taxonomy-index' => array(
+          'status' => TRUE,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 1,
+      ),
+      'type' => 'options_select',
+      'weight' => 3,
     ),
   );
 
@@ -229,28 +413,28 @@ function acc_applications_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
-        ),
-        'type' => 'date_default',
-        'weight' => 9,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'long',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
+          'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
         'weight' => 3,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_date_app',
-    'label' => 'Date ',
-    'required' => 1,
+    'label' => 'Date',
+    'required' => 0,
     'settings' => array(
       'default_value' => 'now',
       'default_value2' => 'same',
@@ -263,54 +447,17 @@ function acc_applications_field_default_field_instances() {
       'active' => 1,
       'module' => 'date',
       'settings' => array(
-        'apply_chosen' => 0,
+        'display_all_day' => 0,
         'increment' => 15,
-        'input_format' => 'j M Y - H:i:s',
+        'input_format' => 'm/d/Y - H:i:s',
         'input_format_custom' => '',
         'label_position' => 'above',
+        'repeat_collapsed' => 0,
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
-      'type' => 'date_select',
+      'type' => 'date_popup',
       'weight' => 2,
-    ),
-  );
-
-  // Exported field_instance: 'node-acc_application-field_geographical_location_dest'
-  $field_instances['node-acc_application-field_geographical_location_dest'] = array(
-    'bundle' => 'acc_application',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 13,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 4,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_geographical_location_dest',
-    'label' => 'Geographical Location (Destination)',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'hs_taxonomy',
-      'settings' => array(),
-      'type' => 'taxonomy_hs',
-      'weight' => 7,
     ),
   );
 
@@ -331,13 +478,19 @@ function acc_applications_field_default_field_instances() {
           'thousand_separator' => ' ',
         ),
         'type' => 'number_integer',
-        'weight' => 8,
+        'weight' => 11,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -361,32 +514,49 @@ function acc_applications_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-acc_application-field_if_denied_app'
-  $field_instances['node-acc_application-field_if_denied_app'] = array(
+  // Exported field_instance: 'node-acc_application-field_if_denied_by_whom_'
+  $field_instances['node-acc_application-field_if_denied_by_whom_'] = array(
     'bundle' => 'acc_application',
     'default_value' => NULL,
+    'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 10,
+      ),
+      'search_result' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 7,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_if_denied_app',
+    'field_name' => 'field_if_denied_by_whom_',
     'label' => 'If denied, by whom?',
     'required' => 0,
     'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+        'taxonomy-index' => array(
+          'status' => TRUE,
+        ),
+      ),
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
@@ -394,7 +564,7 @@ function acc_applications_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => 0,
+        'apply_chosen' => '',
       ),
       'type' => 'options_select',
       'weight' => 9,
@@ -405,21 +575,30 @@ function acc_applications_field_default_field_instances() {
   $field_instances['node-acc_application-field_locations'] = array(
     'bundle' => 'acc_application',
     'default_value' => NULL,
+    'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 7,
+      ),
+      'search_result' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 12,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -427,14 +606,30 @@ function acc_applications_field_default_field_instances() {
     'label' => 'Geographical Location (Origin)',
     'required' => 0,
     'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+        'taxonomy-index' => array(
+          'status' => TRUE,
+        ),
+      ),
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'hs_taxonomy',
-      'settings' => array(),
-      'type' => 'taxonomy_hs',
+      'module' => 'shs',
+      'settings' => array(
+        'shs' => array(
+          'create_new_levels' => 0,
+          'create_new_terms' => 0,
+          'force_deepest' => 0,
+          'node_count' => 0,
+          'use_chosen' => 'chosen',
+        ),
+      ),
+      'type' => 'taxonomy_shs',
       'weight' => 6,
     ),
   );
@@ -451,13 +646,19 @@ function acc_applications_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 17,
+        'weight' => 6,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -479,73 +680,46 @@ function acc_applications_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-acc_application-field_organization_type'
-  $field_instances['node-acc_application-field_organization_type'] = array(
+  // Exported field_instance: 'node-acc_application-field_sector'
+  $field_instances['node-acc_application-field_sector'] = array(
     'bundle' => 'acc_application',
     'default_value' => NULL,
+    'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 19,
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 12,
       ),
-      'teaser' => array(
+      'search_result' => array(
         'label' => 'above',
-        'module' => 'hs_taxonomy',
         'settings' => array(),
-        'type' => 'hs_taxonomy_term_reference_hierarchical_text',
-        'weight' => 1,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_organization_type',
-    'label' => 'Sunmitted By Organization Type',
-    'required' => 1,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => 0,
-      ),
-      'type' => 'options_select',
-      'weight' => 3,
-    ),
-  );
-
-  // Exported field_instance: 'node-acc_application-field_organizations'
-  $field_instances['node-acc_application-field_organizations'] = array(
-    'bundle' => 'acc_application',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 18,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_organizations',
-    'label' => 'Submitted By',
+    'field_name' => 'field_sector',
+    'label' => 'Sectors',
     'required' => 0,
     'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
@@ -556,36 +730,53 @@ function acc_applications_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 4,
+      'weight' => 11,
     ),
   );
 
-  // Exported field_instance: 'node-acc_application-field_submited_to'
-  $field_instances['node-acc_application-field_submited_to'] = array(
+  // Exported field_instance: 'node-acc_application-field_submitted_to'
+  $field_instances['node-acc_application-field_submitted_to'] = array(
     'bundle' => 'acc_application',
     'default_value' => NULL,
+    'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 9,
+      ),
+      'search_result' => array(
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 3,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_submited_to',
+    'field_name' => 'field_submitted_to',
     'label' => 'Submitted To',
     'required' => 0,
     'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+        'taxonomy-index' => array(
+          'status' => TRUE,
+        ),
+      ),
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
@@ -600,35 +791,69 @@ function acc_applications_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-acc_application_types-field_related_to_access_'
-  $field_instances['taxonomy_term-acc_application_types-field_related_to_access_'] = array(
-    'bundle' => 'acc_application_types',
+  // Exported field_instance: 'node-acc_application-og_group_ref'
+  $field_instances['node-acc_application-og_group_ref'] = array(
+    'bundle' => 'acc_application',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
+        'module' => 'og_ui',
         'settings' => array(),
-        'type' => 'list_default',
+        'type' => 'og_list_default',
+        'weight' => 0,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
     ),
-    'entity_type' => 'taxonomy_term',
-    'field_name' => 'field_related_to_access_',
-    'label' => 'Related to Access ',
-    'required' => 0,
+    'entity_type' => 'node',
+    'field_name' => 'og_group_ref',
+    'label' => 'Groups audience',
+    'required' => FALSE,
     'settings' => array(
+      'behaviors' => array(
+        'og_widget' => array(
+          'admin' => array(
+            'widget_type' => 'entityreference_autocomplete',
+          ),
+          'default' => array(
+            'widget_type' => 'options_select',
+          ),
+          'status' => TRUE,
+        ),
+      ),
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
+    'view modes' => array(
+      'full' => array(
+        'custom settings' => FALSE,
+        'label' => 'Full',
+        'type' => 'og_list_default',
+      ),
+      'teaser' => array(
+        'custom settings' => FALSE,
+        'label' => 'Teaser',
+        'type' => 'og_list_default',
+      ),
+    ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'options',
+      'module' => 'og',
       'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 1,
+      'type' => 'og_complex',
+      'weight' => 14,
     ),
   );
 
@@ -636,19 +861,19 @@ function acc_applications_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Application Types');
   t('Body');
-  t('Date ');
+  t('Date');
   t('Geographical Location (Destination)');
   t('Geographical Location (Origin)');
+  t('Groups audience');
   t('How many days to get an answer?');
   t('If denied, by whom?');
-  t('Impacts of applications');
+  t('Impacts');
   t('Nationality');
-  t('Related to Access ');
   t('Sectors');
   t('Submission Status');
   t('Submitted By');
+  t('Submitted By Organization Type');
   t('Submitted To');
-  t('Sunmitted By Organization Type');
 
   return $field_instances;
 }

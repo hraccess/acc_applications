@@ -15,7 +15,7 @@ function acc_applications_feeds_importer_default() {
   $feeds_importer->api_version = 1;
   $feeds_importer->id = 'acc_submission_status';
   $feeds_importer->config = array(
-    'name' => 'Access Submission Status',
+    'name' => 'CSV Access Submission Status',
     'description' => '',
     'fetcher' => array(
       'plugin_key' => 'FeedsHTTPFetcher',
@@ -44,22 +44,17 @@ function acc_applications_feeds_importer_default() {
             'unique' => FALSE,
           ),
           1 => array(
-            'source' => 'GUID',
-            'target' => 'guid',
-            'unique' => FALSE,
-          ),
-          2 => array(
             'source' => 'Parent',
             'target' => 'parent',
             'unique' => FALSE,
           ),
-          3 => array(
-            'source' => 'UUID',
-            'target' => 'uuid:uuid',
+          2 => array(
+            'source' => 'GUID',
+            'target' => 'guid',
             'unique' => FALSE,
           ),
         ),
-        'update_existing' => '2',
+        'update_existing' => '0',
         'input_format' => 'plain_text',
         'skip_hash_check' => 0,
         'bundle' => 'acc_application_submission_status',
@@ -79,8 +74,8 @@ function acc_applications_feeds_importer_default() {
   $feeds_importer->api_version = 1;
   $feeds_importer->id = 'csv_acc_application';
   $feeds_importer->config = array(
-    'name' => 'CSV Access Application',
-    'description' => 'To import the content for Access Applications Content type',
+    'name' => 'CSV Access Applications',
+    'description' => '',
     'fetcher' => array(
       'plugin_key' => 'FeedsFileFetcher',
       'config' => array(
@@ -114,74 +109,87 @@ function acc_applications_feeds_importer_default() {
           ),
           1 => array(
             'source' => 'Application Types',
-            'target' => 'field_acc_application_types',
-            'term_search' => '0',
-            'autocreate' => 0,
+            'target' => 'field_acc_application_types:label',
+            'unique' => FALSE,
           ),
           2 => array(
-            'source' => 'Date',
+            'source' => 'Date Start',
             'target' => 'field_date_app:start',
             'unique' => FALSE,
           ),
           3 => array(
-            'source' => 'Organization Type',
-            'target' => 'field_organization_type',
+            'source' => 'Date End',
+            'target' => 'field_date_app:end',
             'unique' => FALSE,
           ),
           4 => array(
-            'source' => 'Submitted By',
-            'target' => 'field_organizations',
-            'term_search' => '0',
-            'autocreate' => 0,
+            'source' => 'Organization Type',
+            'target' => 'field_acc_submitted_by_org_type:label',
+            'unique' => FALSE,
           ),
           5 => array(
-            'source' => 'Submitted To',
-            'target' => 'field_submited_to',
-            'term_search' => '0',
-            'autocreate' => 0,
+            'source' => 'Submitted By',
+            'target' => 'field_acc_submitted_by:label',
+            'unique' => FALSE,
           ),
           6 => array(
-            'source' => 'If denied, by whom?',
-            'target' => 'field_if_denied_app',
-            'term_search' => '0',
-            'autocreate' => 0,
+            'source' => 'Submitted To',
+            'target' => 'field_submitted_to:label',
+            'unique' => FALSE,
           ),
           7 => array(
+            'source' => 'Submission Status',
+            'target' => 'field_acc_submission_status:label',
+            'unique' => FALSE,
+          ),
+          8 => array(
+            'source' => 'If denied, by whom?',
+            'target' => 'field_if_denied_by_whom_:label',
+            'unique' => FALSE,
+          ),
+          9 => array(
             'source' => 'How many days to get an answer?',
             'target' => 'field_how_many_days',
             'unique' => FALSE,
           ),
-          8 => array(
-            'source' => 'Sectors',
-            'target' => 'field_clusters',
-            'term_search' => '0',
-            'autocreate' => 0,
-          ),
-          9 => array(
-            'source' => 'Geograpical Location Destination',
-            'target' => 'field_geographical_location_dest',
-            'term_search' => '0',
-            'autocreate' => 0,
-          ),
           10 => array(
-            'source' => 'Submission Status',
-            'target' => 'field_acc_submission_status',
-            'term_search' => '0',
-            'autocreate' => 0,
+            'source' => 'Sectors',
+            'target' => 'field_sector:label',
+            'unique' => FALSE,
           ),
           11 => array(
-            'source' => 'Nationality of traveler',
-            'target' => 'node:acc_application:field_acc_nationality:name',
+            'source' => 'Geograpical Location Destination',
+            'target' => 'field_acc_geo_location_dest:label',
             'unique' => FALSE,
           ),
           12 => array(
+            'source' => 'Geograpical Location Origin',
+            'target' => 'field_locations:label',
+            'unique' => FALSE,
+          ),
+          13 => array(
+            'source' => 'Nationality of traveler',
+            'target' => 'field_nationality',
+            'unique' => FALSE,
+          ),
+          14 => array(
             'source' => 'Type of impact',
             'target' => 'field_acc_impacts:field_acc_impact_type:label',
             'unique' => FALSE,
           ),
-          13 => array(
+          15 => array(
             'source' => 'Impact value',
             'target' => 'field_acc_impacts:field_acc_impact_value',
+            'unique' => FALSE,
+          ),
+          16 => array(
+            'source' => 'Description',
+            'target' => 'body:et:en',
+            'unique' => FALSE,
+          ),
+          17 => array(
+            'source' => 'Groups audience',
+            'target' => 'og_group_ref:label',
             'unique' => FALSE,
           ),
         ),
@@ -205,7 +213,7 @@ function acc_applications_feeds_importer_default() {
   $feeds_importer->api_version = 1;
   $feeds_importer->id = 'csv_acc_application_types';
   $feeds_importer->config = array(
-    'name' => 'CSV Access Application Types',
+    'name' => 'Access Application Types',
     'description' => '',
     'fetcher' => array(
       'plugin_key' => 'FeedsHTTPFetcher',
@@ -243,13 +251,8 @@ function acc_applications_feeds_importer_default() {
             'target' => 'guid',
             'unique' => FALSE,
           ),
-          3 => array(
-            'source' => 'UUID',
-            'target' => 'uuid:uuid',
-            'unique' => FALSE,
-          ),
         ),
-        'update_existing' => '2',
+        'update_existing' => '0',
         'input_format' => 'plain_text',
         'skip_hash_check' => 0,
         'bundle' => 'acc_application_types',
