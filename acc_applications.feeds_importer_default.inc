@@ -16,7 +16,7 @@ function acc_applications_feeds_importer_default() {
   $feeds_importer->id = 'acc_submission_status';
   $feeds_importer->config = array(
     'name' => 'CSV Access Submission Status',
-    'description' => '',
+    'description' => 'To import Access Submission Status in csv',
     'fetcher' => array(
       'plugin_key' => 'FeedsHTTPFetcher',
       'config' => array(
@@ -75,7 +75,7 @@ function acc_applications_feeds_importer_default() {
   $feeds_importer->id = 'csv_acc_application';
   $feeds_importer->config = array(
     'name' => 'CSV Access Applications',
-    'description' => '',
+    'description' => 'To import Access Applications in csv',
     'fetcher' => array(
       'plugin_key' => 'FeedsFileFetcher',
       'config' => array(
@@ -214,7 +214,7 @@ function acc_applications_feeds_importer_default() {
   $feeds_importer->id = 'csv_acc_application_types';
   $feeds_importer->config = array(
     'name' => 'Access Application Types',
-    'description' => '',
+    'description' => 'To import Access Application Types in csv',
     'fetcher' => array(
       'plugin_key' => 'FeedsHTTPFetcher',
       'config' => array(

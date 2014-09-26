@@ -57,7 +57,7 @@ function acc_applications_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -111,6 +111,55 @@ function acc_applications_field_default_field_instances() {
       ),
       'type' => 'taxonomy_shs',
       'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'node-acc_application-field_acc_attach_file'
+  $field_instances['node-acc_application-field_acc_attach_file'] = array(
+    'bundle' => 'acc_application',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 15,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_acc_attach_file',
+    'label' => 'Attach file',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'entity_translation_sync' => FALSE,
+      'file_directory' => '',
+      'file_extensions' => 'txt',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 15,
     ),
   );
 
@@ -223,7 +272,7 @@ function acc_applications_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -280,7 +329,7 @@ function acc_applications_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 31,
+      'weight' => 9,
     ),
   );
 
@@ -510,7 +559,7 @@ function acc_applications_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -567,7 +616,7 @@ function acc_applications_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -730,7 +779,7 @@ function acc_applications_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -795,6 +844,7 @@ function acc_applications_field_default_field_instances() {
   $field_instances['node-acc_application-og_group_ref'] = array(
     'bundle' => 'acc_application',
     'default_value' => NULL,
+    'default_value_function' => 'entityreference_prepopulate_field_default_value',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -821,10 +871,11 @@ function acc_applications_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'og_group_ref',
     'label' => 'Groups audience',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
       'behaviors' => array(
         'og_widget' => array(
+          'access_override' => 0,
           'admin' => array(
             'widget_type' => 'entityreference_autocomplete',
           ),
@@ -832,6 +883,17 @@ function acc_applications_field_default_field_instances() {
             'widget_type' => 'options_select',
           ),
           'status' => TRUE,
+        ),
+        'prepopulate' => array(
+          'action' => 'none',
+          'action_on_edit' => 0,
+          'fallback' => 'none',
+          'providers' => array(
+            'og_context' => 0,
+            'url' => 1,
+          ),
+          'skip_perm' => 0,
+          'status' => 1,
         ),
       ),
       'entity_translation_sync' => FALSE,
@@ -850,16 +912,18 @@ function acc_applications_field_default_field_instances() {
       ),
     ),
     'widget' => array(
+      'active' => 0,
       'module' => 'og',
       'settings' => array(),
       'type' => 'og_complex',
-      'weight' => 14,
+      'weight' => 16,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
   t('Application Types');
+  t('Attach file');
   t('Body');
   t('Date');
   t('Geographical Location (Destination)');
