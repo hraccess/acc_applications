@@ -357,11 +357,10 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['field_acc_submission_status']['settings'] = array(
     'link' => 0,
   );
-  /* Field: Content: Global Cluster */
+  /* Field: Content: Sectors */
   $handler->display->display_options['fields']['field_sector']['id'] = 'field_sector';
   $handler->display->display_options['fields']['field_sector']['table'] = 'field_data_field_sector';
   $handler->display->display_options['fields']['field_sector']['field'] = 'field_sector';
-  $handler->display->display_options['fields']['field_sector']['label'] = 'Sectors';
   $handler->display->display_options['fields']['field_sector']['settings'] = array(
     'link' => 0,
   );
@@ -534,11 +533,10 @@ function acc_applications_views_default_views() {
     'thousand_separator' => ' ',
     'prefix_suffix' => 1,
   );
-  /* Field: Content: Global Cluster */
+  /* Field: Content: Sectors */
   $handler->display->display_options['fields']['field_sector']['id'] = 'field_sector';
   $handler->display->display_options['fields']['field_sector']['table'] = 'field_data_field_sector';
   $handler->display->display_options['fields']['field_sector']['field'] = 'field_sector';
-  $handler->display->display_options['fields']['field_sector']['label'] = 'Sectors';
   $handler->display->display_options['fields']['field_sector']['settings'] = array(
     'link' => 0,
   );
@@ -778,11 +776,10 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['field_acc_submission_status']['settings'] = array(
     'link' => 0,
   );
-  /* Field: Content: Global Cluster */
+  /* Field: Content: Sectors */
   $handler->display->display_options['fields']['field_sector']['id'] = 'field_sector';
   $handler->display->display_options['fields']['field_sector']['table'] = 'field_data_field_sector';
   $handler->display->display_options['fields']['field_sector']['field'] = 'field_sector';
-  $handler->display->display_options['fields']['field_sector']['label'] = 'Sectors';
   $handler->display->display_options['fields']['field_sector']['settings'] = array(
     'link' => 0,
   );
@@ -1021,11 +1018,10 @@ function acc_applications_views_default_views() {
     'thousand_separator' => ' ',
     'prefix_suffix' => 1,
   );
-  /* Field: Content: Global Cluster */
+  /* Field: Content: Sectors */
   $handler->display->display_options['fields']['field_sector']['id'] = 'field_sector';
   $handler->display->display_options['fields']['field_sector']['table'] = 'field_data_field_sector';
   $handler->display->display_options['fields']['field_sector']['field'] = 'field_sector';
-  $handler->display->display_options['fields']['field_sector']['label'] = 'Sectors';
   $handler->display->display_options['fields']['field_sector']['settings'] = array(
     'link' => 0,
   );
@@ -1358,10 +1354,11 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['field_if_denied_by_whom_']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['field_if_denied_by_whom_']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_if_denied_by_whom_']['bypass_access'] = 0;
-  /* Field: Indexed Node: Sectors */
+  /* Field: Indexed Node: Global Cluster */
   $handler->display->display_options['fields']['field_sector']['id'] = 'field_sector';
   $handler->display->display_options['fields']['field_sector']['table'] = 'search_api_index_acc_applications';
   $handler->display->display_options['fields']['field_sector']['field'] = 'field_sector';
+  $handler->display->display_options['fields']['field_sector']['label'] = 'Sectors';
   $handler->display->display_options['fields']['field_sector']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['field_sector']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_sector']['bypass_access'] = 0;
@@ -1393,11 +1390,10 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['body']['table'] = 'search_api_index_acc_applications';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = 'Description';
-  /* Field: Indexed Node: Space(s) */
+  /* Field: Indexed Node: Groups audience */
   $handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
   $handler->display->display_options['fields']['og_group_ref']['table'] = 'search_api_index_acc_applications';
   $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
-  $handler->display->display_options['fields']['og_group_ref']['label'] = 'Groups audience';
   $handler->display->display_options['fields']['og_group_ref']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['og_group_ref']['view_mode'] = 'full';
   $handler->display->display_options['fields']['og_group_ref']['bypass_access'] = 0;
