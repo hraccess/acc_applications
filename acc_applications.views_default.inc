@@ -357,7 +357,7 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['field_acc_submission_status']['settings'] = array(
     'link' => 0,
   );
-  /* Field: Content: Sectors */
+  /* Field: Content: Global Cluster */
   $handler->display->display_options['fields']['field_sector']['id'] = 'field_sector';
   $handler->display->display_options['fields']['field_sector']['table'] = 'field_data_field_sector';
   $handler->display->display_options['fields']['field_sector']['field'] = 'field_sector';
@@ -533,7 +533,7 @@ function acc_applications_views_default_views() {
     'thousand_separator' => ' ',
     'prefix_suffix' => 1,
   );
-  /* Field: Content: Sectors */
+  /* Field: Content: Global Cluster */
   $handler->display->display_options['fields']['field_sector']['id'] = 'field_sector';
   $handler->display->display_options['fields']['field_sector']['table'] = 'field_data_field_sector';
   $handler->display->display_options['fields']['field_sector']['field'] = 'field_sector';
@@ -776,7 +776,7 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['field_acc_submission_status']['settings'] = array(
     'link' => 0,
   );
-  /* Field: Content: Sectors */
+  /* Field: Content: Global Cluster */
   $handler->display->display_options['fields']['field_sector']['id'] = 'field_sector';
   $handler->display->display_options['fields']['field_sector']['table'] = 'field_data_field_sector';
   $handler->display->display_options['fields']['field_sector']['field'] = 'field_sector';
@@ -1018,7 +1018,7 @@ function acc_applications_views_default_views() {
     'thousand_separator' => ' ',
     'prefix_suffix' => 1,
   );
-  /* Field: Content: Sectors */
+  /* Field: Content: Global Cluster */
   $handler->display->display_options['fields']['field_sector']['id'] = 'field_sector';
   $handler->display->display_options['fields']['field_sector']['table'] = 'field_data_field_sector';
   $handler->display->display_options['fields']['field_sector']['field'] = 'field_sector';
@@ -1072,7 +1072,7 @@ function acc_applications_views_default_views() {
     t('Geographical Location (Destination)'),
     t('Res By Sector n Status'),
     t('Access Application By Sector And Status'),
-    t('Sectors'),
+    t('Global Cluster'),
     t('Res Num of days'),
     t('Number of days to get an answer'),
     t('Avg number of days to get an answer'),
@@ -1354,11 +1354,10 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['field_if_denied_by_whom_']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['field_if_denied_by_whom_']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_if_denied_by_whom_']['bypass_access'] = 0;
-  /* Field: Indexed Node: Global Cluster */
+  /* Field: Indexed Node: Sectors */
   $handler->display->display_options['fields']['field_sector']['id'] = 'field_sector';
   $handler->display->display_options['fields']['field_sector']['table'] = 'search_api_index_acc_applications';
   $handler->display->display_options['fields']['field_sector']['field'] = 'field_sector';
-  $handler->display->display_options['fields']['field_sector']['label'] = 'Sectors';
   $handler->display->display_options['fields']['field_sector']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['field_sector']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_sector']['bypass_access'] = 0;
@@ -1390,7 +1389,7 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['body']['table'] = 'search_api_index_acc_applications';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = 'Description';
-  /* Field: Indexed Node: Groups audience */
+  /* Field: Indexed Node: Space(s) */
   $handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
   $handler->display->display_options['fields']['og_group_ref']['table'] = 'search_api_index_acc_applications';
   $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
@@ -1549,7 +1548,7 @@ function acc_applications_views_default_views() {
     t('Impact Value'),
     t('Attach file'),
     t('Description'),
-    t('Groups audience'),
+    t('Space(s)'),
     t('Data Overlay'),
     t('Latitude'),
     t('Longitude'),

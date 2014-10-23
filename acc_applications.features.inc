@@ -23,6 +23,9 @@ function acc_applications_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "openlayers" && $api == "openlayers_maps") {
     return array("version" => "1");
   }
+  if ($module == "panelizer" && $api == "panelizer") {
+    return array("version" => "1");
+  }
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -49,7 +52,6 @@ function acc_applications_node_info() {
       'help' => '',
     ),
   );
-  drupal_alter('node_info', $items);
   return $items;
 }
 
@@ -108,7 +110,7 @@ function acc_applications_default_search_api_index() {
           "entity_type" : "taxonomy_term"
         },
         "field_nationality" : { "type" : "list\\u003Cstring\\u003E" },
-        "field_sector" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "node" },
+        "field_sector" : { "type" : "integer", "entity_type" : "node" },
         "field_submitted_to" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "nid" : { "type" : "integer" },
         "search_api_access_node" : { "type" : "list\\u003Cstring\\u003E" },
@@ -182,6 +184,12 @@ function acc_applications_default_search_api_index() {
             "highlight" : "always"
           }
         }
+      },
+      "sorts_widget" : {
+        "enabled" : false,
+        "title" : "",
+        "autosubmit" : false,
+        "autosubmit_hide" : false
       }
     },
     "enabled" : "1",
