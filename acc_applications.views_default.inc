@@ -1096,7 +1096,7 @@ function acc_applications_views_default_views() {
   $view->name = 'acc_applications';
   $view->description = '';
   $view->tag = 'default';
-  $view->base_table = 'search_api_index_acc_applications';
+  $view->base_table = 'search_api_index_acc_search';
   $view->human_name = 'Access Applications';
   $view->core = 7;
   $view->api_version = '3.0';
@@ -1117,11 +1117,11 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'table';
   /* Field: Indexed Node: Node ID */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
   /* Filter criterion: Search: Fulltext search */
   $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
-  $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['filters']['search_api_views_fulltext']['field'] = 'search_api_views_fulltext';
   $handler->display->display_options['filters']['search_api_views_fulltext']['exposed'] = TRUE;
   $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator_id'] = 'search_api_views_fulltext_op';
@@ -1145,14 +1145,14 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Indexed Node: Application Types */
   $handler->display->display_options['fields']['field_acc_application_types']['id'] = 'field_acc_application_types';
-  $handler->display->display_options['fields']['field_acc_application_types']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_acc_application_types']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_acc_application_types']['field'] = 'field_acc_application_types';
   $handler->display->display_options['fields']['field_acc_application_types']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_acc_application_types']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_acc_application_types']['bypass_access'] = 0;
   /* Field: Indexed Node: Date */
   $handler->display->display_options['fields']['field_date_app']['id'] = 'field_date_app';
-  $handler->display->display_options['fields']['field_date_app']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_date_app']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_date_app']['field'] = 'field_date_app';
   $handler->display->display_options['fields']['field_date_app']['settings'] = array(
     'format_type' => 'short',
@@ -1164,21 +1164,21 @@ function acc_applications_views_default_views() {
   );
   /* Field: Indexed Node: Submission Status */
   $handler->display->display_options['fields']['field_acc_submission_status']['id'] = 'field_acc_submission_status';
-  $handler->display->display_options['fields']['field_acc_submission_status']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_acc_submission_status']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_acc_submission_status']['field'] = 'field_acc_submission_status';
   $handler->display->display_options['fields']['field_acc_submission_status']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_acc_submission_status']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_acc_submission_status']['bypass_access'] = 0;
   /* Field: Indexed Node: Submitted By Organization Type */
   $handler->display->display_options['fields']['field_acc_submitted_by_org_type']['id'] = 'field_acc_submitted_by_org_type';
-  $handler->display->display_options['fields']['field_acc_submitted_by_org_type']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_acc_submitted_by_org_type']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_acc_submitted_by_org_type']['field'] = 'field_acc_submitted_by_org_type';
   $handler->display->display_options['fields']['field_acc_submitted_by_org_type']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_acc_submitted_by_org_type']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_acc_submitted_by_org_type']['bypass_access'] = 0;
   /* Field: Indexed Node: URL */
   $handler->display->display_options['fields']['url']['id'] = 'url';
-  $handler->display->display_options['fields']['url']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['url']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['url']['field'] = 'url';
   $handler->display->display_options['fields']['url']['label'] = 'view';
   $handler->display->display_options['fields']['url']['alter']['alter_text'] = TRUE;
@@ -1192,14 +1192,14 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Indexed Node: Application Types */
   $handler->display->display_options['fields']['field_acc_application_types']['id'] = 'field_acc_application_types';
-  $handler->display->display_options['fields']['field_acc_application_types']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_acc_application_types']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_acc_application_types']['field'] = 'field_acc_application_types';
   $handler->display->display_options['fields']['field_acc_application_types']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_acc_application_types']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_acc_application_types']['bypass_access'] = 0;
   /* Field: Indexed Node: Date */
   $handler->display->display_options['fields']['field_date_app']['id'] = 'field_date_app';
-  $handler->display->display_options['fields']['field_date_app']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_date_app']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_date_app']['field'] = 'field_date_app';
   $handler->display->display_options['fields']['field_date_app']['settings'] = array(
     'format_type' => 'short',
@@ -1211,21 +1211,21 @@ function acc_applications_views_default_views() {
   );
   /* Field: Indexed Node: Submission Status */
   $handler->display->display_options['fields']['field_acc_submission_status']['id'] = 'field_acc_submission_status';
-  $handler->display->display_options['fields']['field_acc_submission_status']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_acc_submission_status']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_acc_submission_status']['field'] = 'field_acc_submission_status';
   $handler->display->display_options['fields']['field_acc_submission_status']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_acc_submission_status']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_acc_submission_status']['bypass_access'] = 0;
   /* Field: Indexed Node: Submitted By Organization Type */
   $handler->display->display_options['fields']['field_acc_submitted_by_org_type']['id'] = 'field_acc_submitted_by_org_type';
-  $handler->display->display_options['fields']['field_acc_submitted_by_org_type']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_acc_submitted_by_org_type']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_acc_submitted_by_org_type']['field'] = 'field_acc_submitted_by_org_type';
   $handler->display->display_options['fields']['field_acc_submitted_by_org_type']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_acc_submitted_by_org_type']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_acc_submitted_by_org_type']['bypass_access'] = 0;
   /* Field: Indexed Node: URL */
   $handler->display->display_options['fields']['url']['id'] = 'url';
-  $handler->display->display_options['fields']['url']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['url']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['url']['field'] = 'url';
   $handler->display->display_options['fields']['url']['label'] = 'view';
   $handler->display->display_options['fields']['url']['alter']['alter_text'] = TRUE;
@@ -1249,12 +1249,12 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Indexed Node: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['title']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['link_to_entity'] = 0;
   /* Field: Application Types: Parent terms (indexed) */
   $handler->display->display_options['fields']['field_acc_application_types_parent']['id'] = 'field_acc_application_types_parent';
-  $handler->display->display_options['fields']['field_acc_application_types_parent']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_acc_application_types_parent']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_acc_application_types_parent']['field'] = 'field_acc_application_types_parent';
   $handler->display->display_options['fields']['field_acc_application_types_parent']['label'] = 'Access Constraints';
   $handler->display->display_options['fields']['field_acc_application_types_parent']['link_to_entity'] = 1;
@@ -1262,14 +1262,14 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['field_acc_application_types_parent']['bypass_access'] = 0;
   /* Field: Indexed Node: Application Types */
   $handler->display->display_options['fields']['field_acc_application_types']['id'] = 'field_acc_application_types';
-  $handler->display->display_options['fields']['field_acc_application_types']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_acc_application_types']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_acc_application_types']['field'] = 'field_acc_application_types';
   $handler->display->display_options['fields']['field_acc_application_types']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_acc_application_types']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_acc_application_types']['bypass_access'] = 0;
   /* Field: Indexed Node: Date » Start date */
   $handler->display->display_options['fields']['field_asst_date_value']['id'] = 'field_asst_date_value';
-  $handler->display->display_options['fields']['field_asst_date_value']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_asst_date_value']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_asst_date_value']['field'] = 'field_asst_date_value';
   $handler->display->display_options['fields']['field_asst_date_value']['label'] = 'Start date';
   $handler->display->display_options['fields']['field_asst_date_value']['date_format'] = 'short';
@@ -1277,7 +1277,7 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['field_asst_date_value']['link_to_entity'] = 0;
   /* Field: Indexed Node: Date » End date */
   $handler->display->display_options['fields']['field_asst_date_value2']['id'] = 'field_asst_date_value2';
-  $handler->display->display_options['fields']['field_asst_date_value2']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_asst_date_value2']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_asst_date_value2']['field'] = 'field_asst_date_value2';
   $handler->display->display_options['fields']['field_asst_date_value2']['label'] = 'End date';
   $handler->display->display_options['fields']['field_asst_date_value2']['date_format'] = 'short';
@@ -1285,28 +1285,28 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['field_asst_date_value2']['link_to_entity'] = 0;
   /* Field: Indexed Node: Submitted By Organization Type */
   $handler->display->display_options['fields']['field_acc_submitted_by_org_type']['id'] = 'field_acc_submitted_by_org_type';
-  $handler->display->display_options['fields']['field_acc_submitted_by_org_type']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_acc_submitted_by_org_type']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_acc_submitted_by_org_type']['field'] = 'field_acc_submitted_by_org_type';
   $handler->display->display_options['fields']['field_acc_submitted_by_org_type']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_acc_submitted_by_org_type']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_acc_submitted_by_org_type']['bypass_access'] = 0;
   /* Field: Indexed Node: Submitted By */
   $handler->display->display_options['fields']['field_acc_submitted_by']['id'] = 'field_acc_submitted_by';
-  $handler->display->display_options['fields']['field_acc_submitted_by']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_acc_submitted_by']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_acc_submitted_by']['field'] = 'field_acc_submitted_by';
   $handler->display->display_options['fields']['field_acc_submitted_by']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_acc_submitted_by']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_acc_submitted_by']['bypass_access'] = 0;
   /* Field: Indexed Node: Submitted To */
   $handler->display->display_options['fields']['field_submitted_to']['id'] = 'field_submitted_to';
-  $handler->display->display_options['fields']['field_submitted_to']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_submitted_to']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_submitted_to']['field'] = 'field_submitted_to';
   $handler->display->display_options['fields']['field_submitted_to']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_submitted_to']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_submitted_to']['bypass_access'] = 0;
   /* Field: Indexed Node: Locations */
   $handler->display->display_options['fields']['field_locations']['id'] = 'field_locations';
-  $handler->display->display_options['fields']['field_locations']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_locations']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_locations']['field'] = 'field_locations';
   $handler->display->display_options['fields']['field_locations']['label'] = 'Geographical Location (Origin)';
   $handler->display->display_options['fields']['field_locations']['link_to_entity'] = 0;
@@ -1314,7 +1314,7 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['field_locations']['bypass_access'] = 0;
   /* Field: Geographical Location (Destination): Parent terms (indexed) */
   $handler->display->display_options['fields']['field_acc_geo_location_dest_parent']['id'] = 'field_acc_geo_location_dest_parent';
-  $handler->display->display_options['fields']['field_acc_geo_location_dest_parent']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_acc_geo_location_dest_parent']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_acc_geo_location_dest_parent']['field'] = 'field_acc_geo_location_dest_parent';
   $handler->display->display_options['fields']['field_acc_geo_location_dest_parent']['label'] = 'Destination Admin 1';
   $handler->display->display_options['fields']['field_acc_geo_location_dest_parent']['link_to_entity'] = 1;
@@ -1322,14 +1322,14 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['field_acc_geo_location_dest_parent']['bypass_access'] = 0;
   /* Field: Indexed Node: Geographical Location (Destination) */
   $handler->display->display_options['fields']['field_acc_geo_location_dest']['id'] = 'field_acc_geo_location_dest';
-  $handler->display->display_options['fields']['field_acc_geo_location_dest']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_acc_geo_location_dest']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_acc_geo_location_dest']['field'] = 'field_acc_geo_location_dest';
   $handler->display->display_options['fields']['field_acc_geo_location_dest']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['field_acc_geo_location_dest']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_acc_geo_location_dest']['bypass_access'] = 0;
   /* Field: Indexed Node: How many days to get an answer? */
   $handler->display->display_options['fields']['field_how_many_days']['id'] = 'field_how_many_days';
-  $handler->display->display_options['fields']['field_how_many_days']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_how_many_days']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_how_many_days']['field'] = 'field_how_many_days';
   $handler->display->display_options['fields']['field_how_many_days']['settings'] = array(
     'thousand_separator' => ' ',
@@ -1337,33 +1337,33 @@ function acc_applications_views_default_views() {
   );
   /* Field: Indexed Node: Nationality */
   $handler->display->display_options['fields']['field_nationality']['id'] = 'field_nationality';
-  $handler->display->display_options['fields']['field_nationality']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_nationality']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_nationality']['field'] = 'field_nationality';
   $handler->display->display_options['fields']['field_nationality']['delta_offset'] = '0';
   /* Field: Indexed Node: Submission Status */
   $handler->display->display_options['fields']['field_acc_submission_status']['id'] = 'field_acc_submission_status';
-  $handler->display->display_options['fields']['field_acc_submission_status']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_acc_submission_status']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_acc_submission_status']['field'] = 'field_acc_submission_status';
   $handler->display->display_options['fields']['field_acc_submission_status']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_acc_submission_status']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_acc_submission_status']['bypass_access'] = 0;
   /* Field: Indexed Node: If denied, by whom? */
   $handler->display->display_options['fields']['field_if_denied_by_whom_']['id'] = 'field_if_denied_by_whom_';
-  $handler->display->display_options['fields']['field_if_denied_by_whom_']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_if_denied_by_whom_']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_if_denied_by_whom_']['field'] = 'field_if_denied_by_whom_';
   $handler->display->display_options['fields']['field_if_denied_by_whom_']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['field_if_denied_by_whom_']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_if_denied_by_whom_']['bypass_access'] = 0;
   /* Field: Indexed Node: Sectors */
   $handler->display->display_options['fields']['field_sector']['id'] = 'field_sector';
-  $handler->display->display_options['fields']['field_sector']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_sector']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_sector']['field'] = 'field_sector';
   $handler->display->display_options['fields']['field_sector']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['field_sector']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_sector']['bypass_access'] = 0;
   /* Field: Impacts: Impacts (indexed) */
   $handler->display->display_options['fields']['field_acc_impacts_field_acc_impact_type']['id'] = 'field_acc_impacts_field_acc_impact_type';
-  $handler->display->display_options['fields']['field_acc_impacts_field_acc_impact_type']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_acc_impacts_field_acc_impact_type']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_acc_impacts_field_acc_impact_type']['field'] = 'field_acc_impacts_field_acc_impact_type';
   $handler->display->display_options['fields']['field_acc_impacts_field_acc_impact_type']['label'] = 'Impacts Type';
   $handler->display->display_options['fields']['field_acc_impacts_field_acc_impact_type']['link_to_entity'] = 0;
@@ -1371,7 +1371,7 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['field_acc_impacts_field_acc_impact_type']['bypass_access'] = 0;
   /* Field: Impacts: Value (indexed) */
   $handler->display->display_options['fields']['field_acc_impacts_field_acc_impact_value']['id'] = 'field_acc_impacts_field_acc_impact_value';
-  $handler->display->display_options['fields']['field_acc_impacts_field_acc_impact_value']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_acc_impacts_field_acc_impact_value']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_acc_impacts_field_acc_impact_value']['field'] = 'field_acc_impacts_field_acc_impact_value';
   $handler->display->display_options['fields']['field_acc_impacts_field_acc_impact_value']['label'] = 'Impact Value';
   $handler->display->display_options['fields']['field_acc_impacts_field_acc_impact_value']['settings'] = array(
@@ -1380,18 +1380,18 @@ function acc_applications_views_default_views() {
   );
   /* Field: Indexed Node: Attach file */
   $handler->display->display_options['fields']['field_acc_attach_file']['id'] = 'field_acc_attach_file';
-  $handler->display->display_options['fields']['field_acc_attach_file']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_acc_attach_file']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_acc_attach_file']['field'] = 'field_acc_attach_file';
   $handler->display->display_options['fields']['field_acc_attach_file']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_acc_attach_file']['delta_offset'] = '0';
   /* Field: Indexed Node: The main body text */
   $handler->display->display_options['fields']['body']['id'] = 'body';
-  $handler->display->display_options['fields']['body']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['body']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = 'Description';
   /* Field: Indexed Node: Space(s) */
   $handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
-  $handler->display->display_options['fields']['og_group_ref']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['og_group_ref']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
   $handler->display->display_options['fields']['og_group_ref']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['og_group_ref']['view_mode'] = 'full';
@@ -1430,21 +1430,21 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Geographical Location (Destination) » Geofield: Latitude (indexed) */
   $handler->display->display_options['fields']['field_acc_geo_location_dest_field_geofield_lat']['id'] = 'field_acc_geo_location_dest_field_geofield_lat';
-  $handler->display->display_options['fields']['field_acc_geo_location_dest_field_geofield_lat']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_acc_geo_location_dest_field_geofield_lat']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_acc_geo_location_dest_field_geofield_lat']['field'] = 'field_acc_geo_location_dest_field_geofield_lat';
   $handler->display->display_options['fields']['field_acc_geo_location_dest_field_geofield_lat']['label'] = 'Latitude';
   $handler->display->display_options['fields']['field_acc_geo_location_dest_field_geofield_lat']['precision'] = '0';
   $handler->display->display_options['fields']['field_acc_geo_location_dest_field_geofield_lat']['link_to_entity'] = 0;
   /* Field: Geographical Location (Destination) » Geofield: Longitude (indexed) */
   $handler->display->display_options['fields']['field_acc_geo_location_dest_field_geofield_lon']['id'] = 'field_acc_geo_location_dest_field_geofield_lon';
-  $handler->display->display_options['fields']['field_acc_geo_location_dest_field_geofield_lon']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['field_acc_geo_location_dest_field_geofield_lon']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_acc_geo_location_dest_field_geofield_lon']['field'] = 'field_acc_geo_location_dest_field_geofield_lon';
   $handler->display->display_options['fields']['field_acc_geo_location_dest_field_geofield_lon']['label'] = 'Longitude';
   $handler->display->display_options['fields']['field_acc_geo_location_dest_field_geofield_lon']['precision'] = '0';
   $handler->display->display_options['fields']['field_acc_geo_location_dest_field_geofield_lon']['link_to_entity'] = 0;
   /* Field: Indexed Node: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'search_api_index_acc_applications';
+  $handler->display->display_options['fields']['title']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['link_to_entity'] = 0;
 
