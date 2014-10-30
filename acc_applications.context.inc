@@ -64,12 +64,6 @@ function acc_applications_context_default_contexts() {
           'region' => 'sidebar_first',
           'weight' => '-5',
         ),
-        'facetapi-jw1tAUVAj2r3IAq1cqAAKBvhcVCxGibm' => array(
-          'module' => 'facetapi',
-          'delta' => 'jw1tAUVAj2r3IAq1cqAAKBvhcVCxGibm',
-          'region' => 'sidebar_first',
-          'weight' => '-4',
-        ),
         'facetapi-IaWlGZVrJA7FTh0NHWbaDeE3QFwVwDdn' => array(
           'module' => 'facetapi',
           'delta' => 'IaWlGZVrJA7FTh0NHWbaDeE3QFwVwDdn',
