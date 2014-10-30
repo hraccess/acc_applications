@@ -357,7 +357,7 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['field_acc_submission_status']['settings'] = array(
     'link' => 0,
   );
-  /* Field: Content: Global Cluster */
+  /* Field: Content: Sectors */
   $handler->display->display_options['fields']['field_sector']['id'] = 'field_sector';
   $handler->display->display_options['fields']['field_sector']['table'] = 'field_data_field_sector';
   $handler->display->display_options['fields']['field_sector']['field'] = 'field_sector';
@@ -533,7 +533,7 @@ function acc_applications_views_default_views() {
     'thousand_separator' => ' ',
     'prefix_suffix' => 1,
   );
-  /* Field: Content: Global Cluster */
+  /* Field: Content: Sectors */
   $handler->display->display_options['fields']['field_sector']['id'] = 'field_sector';
   $handler->display->display_options['fields']['field_sector']['table'] = 'field_data_field_sector';
   $handler->display->display_options['fields']['field_sector']['field'] = 'field_sector';
@@ -776,7 +776,7 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['field_acc_submission_status']['settings'] = array(
     'link' => 0,
   );
-  /* Field: Content: Global Cluster */
+  /* Field: Content: Sectors */
   $handler->display->display_options['fields']['field_sector']['id'] = 'field_sector';
   $handler->display->display_options['fields']['field_sector']['table'] = 'field_data_field_sector';
   $handler->display->display_options['fields']['field_sector']['field'] = 'field_sector';
@@ -1018,7 +1018,7 @@ function acc_applications_views_default_views() {
     'thousand_separator' => ' ',
     'prefix_suffix' => 1,
   );
-  /* Field: Content: Global Cluster */
+  /* Field: Content: Sectors */
   $handler->display->display_options['fields']['field_sector']['id'] = 'field_sector';
   $handler->display->display_options['fields']['field_sector']['table'] = 'field_data_field_sector';
   $handler->display->display_options['fields']['field_sector']['field'] = 'field_sector';
@@ -1072,7 +1072,7 @@ function acc_applications_views_default_views() {
     t('Geographical Location (Destination)'),
     t('Res By Sector n Status'),
     t('Access Application By Sector And Status'),
-    t('Global Cluster'),
+    t('Sectors'),
     t('Res Num of days'),
     t('Number of days to get an answer'),
     t('Avg number of days to get an answer'),
@@ -1119,6 +1119,14 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  /* Contextual filter: Indexed Node: Groups audience */
+  $handler->display->display_options['arguments']['og_group_ref']['id'] = 'og_group_ref';
+  $handler->display->display_options['arguments']['og_group_ref']['table'] = 'search_api_index_acc_search';
+  $handler->display->display_options['arguments']['og_group_ref']['field'] = 'og_group_ref';
+  $handler->display->display_options['arguments']['og_group_ref']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['og_group_ref']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['og_group_ref']['break_phrase'] = 0;
+  $handler->display->display_options['arguments']['og_group_ref']['not'] = 0;
   /* Filter criterion: Search: Fulltext search */
   $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
   $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_acc_search';
@@ -1137,6 +1145,13 @@ function acc_applications_views_default_views() {
     235660466 => 0,
     229782242 => 0,
     147444660 => 0,
+  );
+  /* Filter criterion: Indexed Node: Content type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'search_api_index_acc_search';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'acc_application' => 'acc_application',
   );
 
   /* Display: Master */
@@ -1354,7 +1369,7 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['field_if_denied_by_whom_']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['field_if_denied_by_whom_']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_if_denied_by_whom_']['bypass_access'] = 0;
-  /* Field: Indexed Node: Sectors */
+  /* Field: Indexed Node: Global Cluster */
   $handler->display->display_options['fields']['field_sector']['id'] = 'field_sector';
   $handler->display->display_options['fields']['field_sector']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_sector']['field'] = 'field_sector';
@@ -1389,7 +1404,7 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['body']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = 'Description';
-  /* Field: Indexed Node: Space(s) */
+  /* Field: Indexed Node: Groups audience */
   $handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
   $handler->display->display_options['fields']['og_group_ref']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
@@ -1522,6 +1537,7 @@ function acc_applications_views_default_views() {
     t('Node ID'),
     t('.'),
     t(','),
+    t('All'),
     t('Search'),
     t('Application Types'),
     t('Date'),
@@ -1543,12 +1559,12 @@ function acc_applications_views_default_views() {
     t('How many days to get an answer?'),
     t('Nationality'),
     t('If denied, by whom?'),
-    t('Sectors'),
+    t('Global Cluster'),
     t('Impacts Type'),
     t('Impact Value'),
     t('Attach file'),
     t('Description'),
-    t('Space(s)'),
+    t('Groups audience'),
     t('Data Overlay'),
     t('Latitude'),
     t('Longitude'),
