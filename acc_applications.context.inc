@@ -28,6 +28,12 @@ function acc_applications_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'current_search-hr_current_search' => array(
+          'module' => 'current_search',
+          'delta' => 'hr_current_search',
+          'region' => 'sidebar_first',
+          'weight' => '-10',
+        ),
         'facetapi-dZKUI1OsX180tO50iWKpMXhDgZLzDQg9' => array(
           'module' => 'facetapi',
           'delta' => 'dZKUI1OsX180tO50iWKpMXhDgZLzDQg9',
@@ -274,7 +280,7 @@ function acc_applications_context_default_contexts() {
         'views--exp-acc_applications-table' => array(
           'module' => 'views',
           'delta' => '-exp-acc_applications-table',
-          'region' => 'sidebar_first',
+          'region' => 'branding',
           'weight' => '0',
         ),
       ),
