@@ -44,7 +44,7 @@ function acc_applications_views_api($module = NULL, $api = NULL) {
 function acc_applications_node_info() {
   $items = array(
     'acc_application' => array(
-      'name' => t('Access Applications'),
+      'name' => t('Access Application'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
