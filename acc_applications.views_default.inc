@@ -357,7 +357,7 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['field_acc_submission_status']['settings'] = array(
     'link' => 0,
   );
-  /* Field: Content: Sectors */
+  /* Field: Content: Global Cluster */
   $handler->display->display_options['fields']['field_sector']['id'] = 'field_sector';
   $handler->display->display_options['fields']['field_sector']['table'] = 'field_data_field_sector';
   $handler->display->display_options['fields']['field_sector']['field'] = 'field_sector';
@@ -533,7 +533,7 @@ function acc_applications_views_default_views() {
     'thousand_separator' => ' ',
     'prefix_suffix' => 1,
   );
-  /* Field: Content: Sectors */
+  /* Field: Content: Global Cluster */
   $handler->display->display_options['fields']['field_sector']['id'] = 'field_sector';
   $handler->display->display_options['fields']['field_sector']['table'] = 'field_data_field_sector';
   $handler->display->display_options['fields']['field_sector']['field'] = 'field_sector';
@@ -776,7 +776,7 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['field_acc_submission_status']['settings'] = array(
     'link' => 0,
   );
-  /* Field: Content: Sectors */
+  /* Field: Content: Global Cluster */
   $handler->display->display_options['fields']['field_sector']['id'] = 'field_sector';
   $handler->display->display_options['fields']['field_sector']['table'] = 'field_data_field_sector';
   $handler->display->display_options['fields']['field_sector']['field'] = 'field_sector';
@@ -1018,7 +1018,7 @@ function acc_applications_views_default_views() {
     'thousand_separator' => ' ',
     'prefix_suffix' => 1,
   );
-  /* Field: Content: Sectors */
+  /* Field: Content: Global Cluster */
   $handler->display->display_options['fields']['field_sector']['id'] = 'field_sector';
   $handler->display->display_options['fields']['field_sector']['table'] = 'field_data_field_sector';
   $handler->display->display_options['fields']['field_sector']['field'] = 'field_sector';
@@ -1072,7 +1072,7 @@ function acc_applications_views_default_views() {
     t('Geographical Location (Destination)'),
     t('Res By Sector n Status'),
     t('Access Application By Sector And Status'),
-    t('Sectors'),
+    t('Global Cluster'),
     t('Res Num of days'),
     t('Number of days to get an answer'),
     t('Avg number of days to get an answer'),
@@ -1104,7 +1104,6 @@ function acc_applications_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Access Applications';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'og_context';
   $handler->display->display_options['access']['perm'] = 'create acc_application content';
@@ -1170,7 +1169,7 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['field_date_app']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_date_app']['field'] = 'field_date_app';
   $handler->display->display_options['fields']['field_date_app']['settings'] = array(
-    'format_type' => 'short',
+    'format_type' => 'hr_2',
     'fromto' => 'value',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -1457,11 +1456,30 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['field_acc_geo_location_dest_field_geofield_lon']['label'] = 'Longitude';
   $handler->display->display_options['fields']['field_acc_geo_location_dest_field_geofield_lon']['precision'] = '0';
   $handler->display->display_options['fields']['field_acc_geo_location_dest_field_geofield_lon']['link_to_entity'] = 0;
+  /* Field: Indexed Node: Date */
+  $handler->display->display_options['fields']['field_date_app']['id'] = 'field_date_app';
+  $handler->display->display_options['fields']['field_date_app']['table'] = 'search_api_index_acc_search';
+  $handler->display->display_options['fields']['field_date_app']['field'] = 'field_date_app';
+  $handler->display->display_options['fields']['field_date_app']['label'] = '';
+  $handler->display->display_options['fields']['field_date_app']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_date_app']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_date_app']['settings'] = array(
+    'format_type' => 'hr_2',
+    'fromto' => 'value',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_repeat_rule' => 'show',
+  );
   /* Field: Indexed Node: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['text'] = '[title] ([field_date_app])';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_entity'] = 1;
 
   /* Display: Map */
   $handler = $view->new_display('page', 'Map', 'map');
@@ -1520,7 +1538,6 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['menu']['context_only_inline'] = 0;
   $translatables['acc_applications'] = array(
     t('Master'),
-    t('Access Applications'),
     t('more'),
     t('Apply'),
     t('Reset'),
@@ -1568,6 +1585,7 @@ function acc_applications_views_default_views() {
     t('Data Overlay'),
     t('Latitude'),
     t('Longitude'),
+    t('[title] ([field_date_app])'),
     t('Map'),
     t('Res Reports'),
     t('Imp Reports'),
