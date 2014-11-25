@@ -28,12 +28,6 @@ function acc_applications_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'current_search-hr_current_search' => array(
-          'module' => 'current_search',
-          'delta' => 'hr_current_search',
-          'region' => 'sidebar_first',
-          'weight' => '-10',
-        ),
         'facetapi-dZKUI1OsX180tO50iWKpMXhDgZLzDQg9' => array(
           'module' => 'facetapi',
           'delta' => 'dZKUI1OsX180tO50iWKpMXhDgZLzDQg9',
@@ -64,12 +58,6 @@ function acc_applications_context_default_contexts() {
           'region' => 'sidebar_first',
           'weight' => '5',
         ),
-        'facetapi-Bahacx6hlInI8WhUvXeBkqBCHzmk85Xe' => array(
-          'module' => 'facetapi',
-          'delta' => 'Bahacx6hlInI8WhUvXeBkqBCHzmk85Xe',
-          'region' => 'sidebar_first',
-          'weight' => '6',
-        ),
         'facetapi-IaWlGZVrJA7FTh0NHWbaDeE3QFwVwDdn' => array(
           'module' => 'facetapi',
           'delta' => 'IaWlGZVrJA7FTh0NHWbaDeE3QFwVwDdn',
@@ -82,11 +70,11 @@ function acc_applications_context_default_contexts() {
           'region' => 'sidebar_first',
           'weight' => '9',
         ),
-        'facetapi-jw1tAUVAj2r3IAq1cqAAKBvhcVCxGibm' => array(
-          'module' => 'facetapi',
-          'delta' => 'jw1tAUVAj2r3IAq1cqAAKBvhcVCxGibm',
+        'current_search-acc_current_search' => array(
+          'module' => 'current_search',
+          'delta' => 'acc_current_search',
           'region' => 'sidebar_first',
-          'weight' => '7',
+          'weight' => '-10',
         ),
       ),
     ),
@@ -180,7 +168,7 @@ function acc_applications_context_default_contexts() {
           'module' => 'views',
           'delta' => '-exp-acc_applications-map',
           'region' => 'sidebar_first',
-          'weight' => '0',
+          'weight' => '-10',
         ),
       ),
     ),
@@ -280,8 +268,8 @@ function acc_applications_context_default_contexts() {
         'views--exp-acc_applications-table' => array(
           'module' => 'views',
           'delta' => '-exp-acc_applications-table',
-          'region' => 'branding',
-          'weight' => '0',
+          'region' => 'sidebar_first',
+          'weight' => '-10',
         ),
       ),
     ),

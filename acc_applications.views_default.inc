@@ -1480,6 +1480,44 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['text'] = '[title] ([field_date_app])';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_entity'] = 1;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Search: Fulltext search */
+  $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_acc_search';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['field'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator_id'] = 'search_api_views_fulltext_op';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['label'] = 'Search';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator'] = 'search_api_views_fulltext_op';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['identifier'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    30037204 => 0,
+    200153887 => 0,
+    188284353 => 0,
+    235660466 => 0,
+    229782242 => 0,
+    147444660 => 0,
+  );
+  /* Filter criterion: Indexed Node: Content type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'search_api_index_acc_search';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'acc_application' => 'acc_application',
+  );
+  /* Filter criterion: Geographical Location (Destination) » Geofield: Latitude (indexed) */
+  $handler->display->display_options['filters']['field_acc_geo_location_dest_field_geofield_lat']['id'] = 'field_acc_geo_location_dest_field_geofield_lat';
+  $handler->display->display_options['filters']['field_acc_geo_location_dest_field_geofield_lat']['table'] = 'search_api_index_acc_search';
+  $handler->display->display_options['filters']['field_acc_geo_location_dest_field_geofield_lat']['field'] = 'field_acc_geo_location_dest_field_geofield_lat';
+  $handler->display->display_options['filters']['field_acc_geo_location_dest_field_geofield_lat']['operator'] = 'not empty';
+  /* Filter criterion: Geographical Location (Destination) » Geofield: Longitude (indexed) */
+  $handler->display->display_options['filters']['field_acc_geo_location_dest_field_geofield_lon']['id'] = 'field_acc_geo_location_dest_field_geofield_lon';
+  $handler->display->display_options['filters']['field_acc_geo_location_dest_field_geofield_lon']['table'] = 'search_api_index_acc_search';
+  $handler->display->display_options['filters']['field_acc_geo_location_dest_field_geofield_lon']['field'] = 'field_acc_geo_location_dest_field_geofield_lon';
+  $handler->display->display_options['filters']['field_acc_geo_location_dest_field_geofield_lon']['operator'] = 'not empty';
 
   /* Display: Map */
   $handler = $view->new_display('page', 'Map', 'map');
@@ -1502,6 +1540,7 @@ function acc_applications_views_default_views() {
 
   /* Display: Res Reports */
   $handler = $view->new_display('page', 'Res Reports', 'res_reports');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '0';
@@ -1524,6 +1563,7 @@ function acc_applications_views_default_views() {
 
   /* Display: Imp Reports */
   $handler = $view->new_display('page', 'Imp Reports', 'imp_reports');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '0';
