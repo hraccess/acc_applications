@@ -43,10 +43,10 @@ function acc_applications_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '30',
+          'weight' => '17',
         ),
         'redirect' => array(
-          'weight' => '30',
+          'weight' => '18',
         ),
       ),
       'display' => array(),

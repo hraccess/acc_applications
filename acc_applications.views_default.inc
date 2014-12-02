@@ -1318,11 +1318,10 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['field_submitted_to']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_submitted_to']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_submitted_to']['bypass_access'] = 0;
-  /* Field: Indexed Node: Locations */
+  /* Field: Indexed Node: Geographical Location (Origin) */
   $handler->display->display_options['fields']['field_locations']['id'] = 'field_locations';
   $handler->display->display_options['fields']['field_locations']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_locations']['field'] = 'field_locations';
-  $handler->display->display_options['fields']['field_locations']['label'] = 'Geographical Location (Origin)';
   $handler->display->display_options['fields']['field_locations']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_locations']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_locations']['bypass_access'] = 0;

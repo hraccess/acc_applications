@@ -17,6 +17,9 @@ function acc_applications_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_acc_application_types',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(
       'taxonomy_term_data' => array(
         'columns' => array(
@@ -48,6 +51,7 @@ function acc_applications_field_default_field_bases() {
           'acc_application_types' => 'acc_application_types',
         ),
       ),
+      'profile2_private' => FALSE,
       'target_type' => 'taxonomy_term',
     ),
     'translatable' => 0,
@@ -245,7 +249,7 @@ function acc_applications_field_default_field_bases() {
     'translatable' => 0,
     'type' => 'entityreference',
   );
-  
+
   // Exported field_base: 'field_how_many_days'
   $field_bases['field_how_many_days'] = array(
     'active' => 1,
