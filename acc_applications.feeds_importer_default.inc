@@ -114,12 +114,12 @@ function acc_applications_feeds_importer_default() {
           ),
           2 => array(
             'source' => 'Date Start',
-            'target' => 'field_date_app:start',
+            'target' => 'field_acc_date:start',
             'unique' => FALSE,
           ),
           3 => array(
             'source' => 'Date End',
-            'target' => 'field_date_app:end',
+            'target' => 'field_acc_date:end',
             'unique' => FALSE,
           ),
           4 => array(

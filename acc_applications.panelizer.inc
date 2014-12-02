@@ -220,7 +220,7 @@ function acc_applications_panelizer_defaults() {
     $pane->pid = 'new-946fee6b-e790-4fa2-8839-38574d75c013';
     $pane->panel = 'sidebar';
     $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_date_app';
+    $pane->subtype = 'node:field_acc_date';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(

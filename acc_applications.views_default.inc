@@ -1165,10 +1165,10 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['field_acc_application_types']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_acc_application_types']['bypass_access'] = 0;
   /* Field: Indexed Node: Date */
-  $handler->display->display_options['fields']['field_date_app']['id'] = 'field_date_app';
-  $handler->display->display_options['fields']['field_date_app']['table'] = 'search_api_index_acc_search';
-  $handler->display->display_options['fields']['field_date_app']['field'] = 'field_date_app';
-  $handler->display->display_options['fields']['field_date_app']['settings'] = array(
+  $handler->display->display_options['fields']['field_acc_date']['id'] = 'field_acc_date';
+  $handler->display->display_options['fields']['field_acc_date']['table'] = 'search_api_index_acc_search';
+  $handler->display->display_options['fields']['field_acc_date']['field'] = 'field_acc_date';
+  $handler->display->display_options['fields']['field_acc_date']['settings'] = array(
     'format_type' => 'hr_2',
     'fromto' => 'value',
     'multiple_number' => '',
@@ -1212,10 +1212,10 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['field_acc_application_types']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_acc_application_types']['bypass_access'] = 0;
   /* Field: Indexed Node: Date */
-  $handler->display->display_options['fields']['field_date_app']['id'] = 'field_date_app';
-  $handler->display->display_options['fields']['field_date_app']['table'] = 'search_api_index_acc_search';
-  $handler->display->display_options['fields']['field_date_app']['field'] = 'field_date_app';
-  $handler->display->display_options['fields']['field_date_app']['settings'] = array(
+  $handler->display->display_options['fields']['field_acc_date']['id'] = 'field_acc_date';
+  $handler->display->display_options['fields']['field_acc_date']['table'] = 'search_api_index_acc_search';
+  $handler->display->display_options['fields']['field_acc_date']['field'] = 'field_acc_date';
+  $handler->display->display_options['fields']['field_acc_date']['settings'] = array(
     'format_type' => 'short',
     'fromto' => 'value',
     'multiple_number' => '',
@@ -1457,13 +1457,13 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['field_acc_geo_location_dest_field_geofield_lon']['precision'] = '0';
   $handler->display->display_options['fields']['field_acc_geo_location_dest_field_geofield_lon']['link_to_entity'] = 0;
   /* Field: Indexed Node: Date */
-  $handler->display->display_options['fields']['field_date_app']['id'] = 'field_date_app';
-  $handler->display->display_options['fields']['field_date_app']['table'] = 'search_api_index_acc_search';
-  $handler->display->display_options['fields']['field_date_app']['field'] = 'field_date_app';
-  $handler->display->display_options['fields']['field_date_app']['label'] = '';
-  $handler->display->display_options['fields']['field_date_app']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_date_app']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_date_app']['settings'] = array(
+  $handler->display->display_options['fields']['field_acc_date']['id'] = 'field_acc_date';
+  $handler->display->display_options['fields']['field_acc_date']['table'] = 'search_api_index_acc_search';
+  $handler->display->display_options['fields']['field_acc_date']['field'] = 'field_acc_date';
+  $handler->display->display_options['fields']['field_acc_date']['label'] = '';
+  $handler->display->display_options['fields']['field_acc_date']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_acc_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_acc_date']['settings'] = array(
     'format_type' => 'hr_2',
     'fromto' => 'value',
     'multiple_number' => '',
@@ -1477,7 +1477,7 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['text'] = '[title] ([field_date_app])';
+  $handler->display->display_options['fields']['title']['alter']['text'] = '[title] ([field_acc_date])';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_entity'] = 1;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
@@ -1625,7 +1625,7 @@ function acc_applications_views_default_views() {
     t('Data Overlay'),
     t('Latitude'),
     t('Longitude'),
-    t('[title] ([field_date_app])'),
+    t('[title] ([field_acc_date])'),
     t('Map'),
     t('Res Reports'),
     t('Imp Reports'),

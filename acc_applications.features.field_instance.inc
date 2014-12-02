@@ -447,8 +447,8 @@ function acc_applications_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-acc_application-field_date_app'
-  $field_instances['node-acc_application-field_date_app'] = array(
+  // Exported field_instance: 'node-acc_application-field_acc_date'
+  $field_instances['node-acc_application-field_acc_date'] = array(
     'bundle' => 'acc_application',
     'deleted' => 0,
     'description' => '',
@@ -481,7 +481,7 @@ function acc_applications_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_date_app',
+    'field_name' => 'field_acc_date',
     'label' => 'Date',
     'required' => 0,
     'settings' => array(
