@@ -1118,7 +1118,7 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  /* Contextual filter: Indexed Node: Groups audience */
+  /* Contextual filter: Indexed Node: Space(s) */
   $handler->display->display_options['arguments']['og_group_ref']['id'] = 'og_group_ref';
   $handler->display->display_options['arguments']['og_group_ref']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['arguments']['og_group_ref']['field'] = 'og_group_ref';
@@ -1266,14 +1266,6 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['title']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['link_to_entity'] = 0;
-  /* Field: Application Types: Parent terms (indexed) */
-  $handler->display->display_options['fields']['field_acc_application_types_parent']['id'] = 'field_acc_application_types_parent';
-  $handler->display->display_options['fields']['field_acc_application_types_parent']['table'] = 'search_api_index_acc_search';
-  $handler->display->display_options['fields']['field_acc_application_types_parent']['field'] = 'field_acc_application_types_parent';
-  $handler->display->display_options['fields']['field_acc_application_types_parent']['label'] = 'Access Constraints';
-  $handler->display->display_options['fields']['field_acc_application_types_parent']['link_to_entity'] = 1;
-  $handler->display->display_options['fields']['field_acc_application_types_parent']['view_mode'] = 'full';
-  $handler->display->display_options['fields']['field_acc_application_types_parent']['bypass_access'] = 0;
   /* Field: Indexed Node: Application Types */
   $handler->display->display_options['fields']['field_acc_application_types']['id'] = 'field_acc_application_types';
   $handler->display->display_options['fields']['field_acc_application_types']['table'] = 'search_api_index_acc_search';
@@ -1318,21 +1310,13 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['field_submitted_to']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_submitted_to']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_submitted_to']['bypass_access'] = 0;
-  /* Field: Indexed Node: Geographical Location (Origin) */
+  /* Field: Indexed Node: Locations */
   $handler->display->display_options['fields']['field_locations']['id'] = 'field_locations';
   $handler->display->display_options['fields']['field_locations']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_locations']['field'] = 'field_locations';
   $handler->display->display_options['fields']['field_locations']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_locations']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_locations']['bypass_access'] = 0;
-  /* Field: Geographical Location (Destination): Parent terms (indexed) */
-  $handler->display->display_options['fields']['field_acc_geo_location_dest_parent']['id'] = 'field_acc_geo_location_dest_parent';
-  $handler->display->display_options['fields']['field_acc_geo_location_dest_parent']['table'] = 'search_api_index_acc_search';
-  $handler->display->display_options['fields']['field_acc_geo_location_dest_parent']['field'] = 'field_acc_geo_location_dest_parent';
-  $handler->display->display_options['fields']['field_acc_geo_location_dest_parent']['label'] = 'Destination Admin 1';
-  $handler->display->display_options['fields']['field_acc_geo_location_dest_parent']['link_to_entity'] = 1;
-  $handler->display->display_options['fields']['field_acc_geo_location_dest_parent']['view_mode'] = 'full';
-  $handler->display->display_options['fields']['field_acc_geo_location_dest_parent']['bypass_access'] = 0;
   /* Field: Indexed Node: Geographical Location (Destination) */
   $handler->display->display_options['fields']['field_acc_geo_location_dest']['id'] = 'field_acc_geo_location_dest';
   $handler->display->display_options['fields']['field_acc_geo_location_dest']['table'] = 'search_api_index_acc_search';
@@ -1402,7 +1386,7 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['body']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = 'Description';
-  /* Field: Indexed Node: Groups audience */
+  /* Field: Indexed Node: Space(s) */
   $handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
   $handler->display->display_options['fields']['og_group_ref']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
@@ -1609,7 +1593,7 @@ function acc_applications_views_default_views() {
     t('End date'),
     t('Submitted By'),
     t('Submitted To'),
-    t('Geographical Location (Origin)'),
+    t('Locations'),
     t('Destination Admin 1'),
     t('Geographical Location (Destination)'),
     t('How many days to get an answer?'),
@@ -1620,7 +1604,7 @@ function acc_applications_views_default_views() {
     t('Impact Value'),
     t('Attach file'),
     t('Description'),
-    t('Groups audience'),
+    t('Space(s)'),
     t('Data Overlay'),
     t('Latitude'),
     t('Longitude'),
