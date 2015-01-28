@@ -572,69 +572,6 @@ function acc_applications_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-acc_application-field_date_app'
-  $field_instances['node-acc_application-field_date_app'] = array(
-    'bundle' => 'acc_application',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'long',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-          'show_repeat_rule' => 'show',
-        ),
-        'type' => 'date_default',
-        'weight' => 3,
-      ),
-      'search_result' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_date_app',
-    'label' => 'Date',
-    'required' => 0,
-    'settings' => array(
-      'default_value' => 'now',
-      'default_value2' => 'same',
-      'default_value_code' => '',
-      'default_value_code2' => '',
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'date',
-      'settings' => array(
-        'display_all_day' => 0,
-        'increment' => 15,
-        'input_format' => 'm/d/Y - H:i:s',
-        'input_format_custom' => '',
-        'label_position' => 'above',
-        'repeat_collapsed' => 0,
-        'text_parts' => array(),
-        'year_range' => '-3:+3',
-      ),
-      'type' => 'date_popup',
-      'weight' => 2,
-    ),
-  );
-
   // Exported field_instance: 'node-acc_application-field_how_many_days'
   $field_instances['node-acc_application-field_how_many_days'] = array(
     'bundle' => 'acc_application',
@@ -854,60 +791,6 @@ function acc_applications_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-acc_application-field_sector'
-  $field_instances['node-acc_application-field_sector'] = array(
-    'bundle' => 'acc_application',
-    'default_value' => NULL,
-    'default_value_function' => '',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 12,
-      ),
-      'search_result' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_sector',
-    'label' => 'Sectors',
-    'required' => 0,
-    'settings' => array(
-      'behaviors' => array(
-        'prepopulate' => array(
-          'status' => 0,
-        ),
-      ),
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => 1,
-      ),
-      'type' => 'options_select',
-      'weight' => 12,
-    ),
-  );
-
   // Exported field_instance: 'node-acc_application-field_submitted_to'
   $field_instances['node-acc_application-field_submitted_to'] = array(
     'bundle' => 'acc_application',
@@ -1059,7 +942,6 @@ function acc_applications_field_default_field_instances() {
   t('If denied, by whom?');
   t('Impacts');
   t('Nationality');
-  t('Sectors');
   t('Submission Status');
   t('Submitted By');
   t('Submitted By Organization Type');
