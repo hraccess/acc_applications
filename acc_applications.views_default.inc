@@ -87,6 +87,15 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['field_acc_submission_status']['settings'] = array(
     'link' => 0,
   );
+  /* Contextual filter: Content: Space(s) (og_group_ref) */
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['table'] = 'og_membership';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['default_argument_type'] = 'og_context';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['summary_options']['items_per_page'] = '25';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -357,7 +366,7 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['field_acc_submission_status']['settings'] = array(
     'link' => 0,
   );
-  /* Field: Content: Global Cluster */
+  /* Field: Content: Sectors */
   $handler->display->display_options['fields']['field_sector']['id'] = 'field_sector';
   $handler->display->display_options['fields']['field_sector']['table'] = 'field_data_field_sector';
   $handler->display->display_options['fields']['field_sector']['field'] = 'field_sector';
@@ -533,7 +542,7 @@ function acc_applications_views_default_views() {
     'thousand_separator' => ' ',
     'prefix_suffix' => 1,
   );
-  /* Field: Content: Global Cluster */
+  /* Field: Content: Sectors */
   $handler->display->display_options['fields']['field_sector']['id'] = 'field_sector';
   $handler->display->display_options['fields']['field_sector']['table'] = 'field_data_field_sector';
   $handler->display->display_options['fields']['field_sector']['field'] = 'field_sector';
@@ -776,7 +785,7 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['field_acc_submission_status']['settings'] = array(
     'link' => 0,
   );
-  /* Field: Content: Global Cluster */
+  /* Field: Content: Sectors */
   $handler->display->display_options['fields']['field_sector']['id'] = 'field_sector';
   $handler->display->display_options['fields']['field_sector']['table'] = 'field_data_field_sector';
   $handler->display->display_options['fields']['field_sector']['field'] = 'field_sector';
@@ -1018,7 +1027,7 @@ function acc_applications_views_default_views() {
     'thousand_separator' => ' ',
     'prefix_suffix' => 1,
   );
-  /* Field: Content: Global Cluster */
+  /* Field: Content: Sectors */
   $handler->display->display_options['fields']['field_sector']['id'] = 'field_sector';
   $handler->display->display_options['fields']['field_sector']['table'] = 'field_data_field_sector';
   $handler->display->display_options['fields']['field_sector']['field'] = 'field_sector';
@@ -1062,6 +1071,7 @@ function acc_applications_views_default_views() {
     t('Parent'),
     t('Number of reports'),
     t('Submission Status'),
+    t('All'),
     t('Res By Status'),
     t('XLS Res By Status'),
     t('Res By Org n Status'),
@@ -1072,7 +1082,7 @@ function acc_applications_views_default_views() {
     t('Geographical Location (Destination)'),
     t('Res By Sector n Status'),
     t('Access Application By Sector And Status'),
-    t('Global Cluster'),
+    t('Sectors'),
     t('Res Num of days'),
     t('Number of days to get an answer'),
     t('Avg number of days to get an answer'),
@@ -1118,7 +1128,7 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  /* Contextual filter: Indexed Node: Space(s) */
+  /* Contextual filter: Indexed Node: Groups audience */
   $handler->display->display_options['arguments']['og_group_ref']['id'] = 'og_group_ref';
   $handler->display->display_options['arguments']['og_group_ref']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['arguments']['og_group_ref']['field'] = 'og_group_ref';
@@ -1386,7 +1396,7 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['body']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = 'Description';
-  /* Field: Indexed Node: Space(s) */
+  /* Field: Indexed Node: Groups audience */
   $handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
   $handler->display->display_options['fields']['og_group_ref']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
@@ -1395,9 +1405,12 @@ function acc_applications_views_default_views() {
   $handler->display->display_options['fields']['og_group_ref']['bypass_access'] = 0;
   $handler->display->display_options['path'] = 'node/%/access/applications/xls';
   $handler->display->display_options['displays'] = array(
-    'default' => 'default',
     'master' => 'master',
     'table' => 'table',
+    'default' => 0,
+    'map' => 0,
+    'res_reports' => 0,
+    'imp_reports' => 0,
   );
 
   /* Display: Data Overlay */
@@ -1523,7 +1536,6 @@ function acc_applications_views_default_views() {
 
   /* Display: Res Reports */
   $handler = $view->new_display('page', 'Res Reports', 'res_reports');
-  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '0';
@@ -1546,7 +1558,6 @@ function acc_applications_views_default_views() {
 
   /* Display: Imp Reports */
   $handler = $view->new_display('page', 'Imp Reports', 'imp_reports');
-  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '0';
@@ -1588,13 +1599,11 @@ function acc_applications_views_default_views() {
     t('Table'),
     t('XLS'),
     t('Title'),
-    t('Access Constraints'),
     t('Start date'),
     t('End date'),
     t('Submitted By'),
     t('Submitted To'),
     t('Locations'),
-    t('Destination Admin 1'),
     t('Geographical Location (Destination)'),
     t('How many days to get an answer?'),
     t('Nationality'),
@@ -1604,7 +1613,7 @@ function acc_applications_views_default_views() {
     t('Impact Value'),
     t('Attach file'),
     t('Description'),
-    t('Space(s)'),
+    t('Groups audience'),
     t('Data Overlay'),
     t('Latitude'),
     t('Longitude'),
