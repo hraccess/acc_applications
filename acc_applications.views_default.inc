@@ -1432,6 +1432,7 @@ function acc_applications_views_default_views() {
     'name_field' => 'title',
     'description_field' => '',
     'style_field' => '',
+    'projection' => 'EPSG:4326',
   );
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
